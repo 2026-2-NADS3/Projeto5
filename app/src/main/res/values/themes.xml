@@ -1,0 +1,29 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Tema base do aplicativo -->
+    <style name="Base.Theme.ProximaEtapa" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/roxo</item>
+        <item name="colorSecondary">@color/amarelo</item>
+    </style>
+
+    <style name="Theme.ProximaEtapa" parent="Base.Theme.ProximaEtapa" />
+
+    <!-- Estilos usados na grade da tela de Calendário (activity_calendario.xml) -->
+    <style name="DiaSemanaHeader">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textColor">@color/creme</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="DiaCalendario">
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_margin">2dp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:padding">6dp</item>
+        <item name="android:textColor">@color/creme</item>
+    </style>
+</resources>
