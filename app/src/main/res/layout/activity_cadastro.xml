@@ -148,6 +148,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
             android:layout_marginBottom="24dp"
+            android:background="@drawable/bg_botao_arredondado"
             android:backgroundTint="@color/roxo"
             android:padding="12dp"
             android:text="Cadastrar"
