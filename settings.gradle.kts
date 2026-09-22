@@ -21,3 +21,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "ProximaEtapa-Entrega1"
 include(":app")
+include(":app")
+ 
