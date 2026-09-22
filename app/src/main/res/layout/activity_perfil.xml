@@ -6,7 +6,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/preto"
+    android:background="@color/creme"
     tools:context=".PerfilActivity">
 
     <!-- Cabeçalho -->
@@ -17,200 +17,157 @@
         android:layout_marginTop="20dp"
         android:gravity="center"
         android:text="Perfil"
-        android:textColor="@color/creme"
+        android:textColor="@color/preto"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- Conteúdo rolável entre o cabeçalho e a barra inferior -->
-    <ScrollView
+    <!-- Conteúdo da tela: precisa das 4 linhas "app:layout_constraint..." abaixo
+         para o ConstraintLayout saber onde encaixar este bloco (entre o
+         título e a barra inferior). Sem elas, ele ficaria jogado no
+         canto superior esquerdo, por cima do título. -->
+    <LinearLayout
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="12dp"
+        android:orientation="vertical"
+        android:padding="36dp"
         app:layout_constraintBottom_toTopOf="@id/barraNavegacaoInferior"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/txtTituloPerfil">
 
+        <!-- Foto/nome do aluno -->
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:background="@color/cremeForte"
+            android:orientation="horizontal"
+            android:padding="12dp">
 
-            <!-- Cartão com foto/nome do aluno -->
+            <ImageView
+                android:id="@+id/imgFotoPerfil"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@drawable/bg_avatar_placeholder"
+                android:padding="8dp"
+                android:src="@drawable/ic_nav_perfil" />
+
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:background="@color/creme"
-                android:orientation="horizontal"
-                android:padding="12dp">
+                android:layout_marginStart="12dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-                <ImageView
-                    android:id="@+id/imgFotoPerfil"
-                    android:layout_width="80dp"
-                    android:layout_height="80dp"
-                    android:background="@drawable/bg_avatar_placeholder"
-                    android:contentDescription="Foto do aluno"
-                    android:padding="8dp"
-                    android:src="@drawable/ic_nav_perfil" />
-
-                <LinearLayout
-                    android:layout_width="0dp"
+                <TextView
+                    android:id="@+id/txtNomePerfil"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginStart="12dp"
-                    android:layout_weight="1"
-                    android:orientation="vertical">
+                    android:text="Nome"
+                    android:textColor="@color/preto"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
 
-                    <TextView
-                        android:id="@+id/txtNomePerfil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:text="Nome"
-                        android:textColor="@color/preto"
-                        android:textSize="18sp"
-                        android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/txtLinkedinPerfil"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:text="LinkedIn: não informado"
+                    android:textColor="@color/preto" />
 
-                    <TextView
-                        android:id="@+id/txtLinkedinPerfil"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="LinkedIn: não informado"
-                        android:textColor="@color/preto" />
-
-                    <TextView
-                        android:id="@+id/txtConexoesPerfil"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="6dp"
-                        android:background="@color/roxo"
-                        android:paddingStart="10dp"
-                        android:paddingTop="4dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="4dp"
-                        android:text="Conexões"
-                        android:textColor="@color/creme" />
-                </LinearLayout>
+                <TextView
+                    android:id="@+id/txtConexoesPerfil"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:background="@color/roxo"
+                    android:paddingStart="10dp"
+                    android:paddingTop="4dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="4dp"
+                    android:text="Conexões"
+                    android:textColor="@color/creme" />
             </LinearLayout>
-
-            <!-- Testes de perfil -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:background="@color/preto"
-                android:padding="16dp"
-                android:text="Testes de Perfil"
-                android:textColor="@color/creme" />
-
-            <!-- Botão funcional: leva para a Agenda (Calendário) -->
-            <Button
-                android:id="@+id/btnMeusEventos"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="12dp"
-                android:backgroundTint="@color/roxo"
-                android:drawableEnd="@drawable/ic_nav_calendario"
-                android:padding="12dp"
-                android:text="Meus Eventos (Calendário)"
-                android:textColor="@color/creme" />
-
-            <!-- Certificados (conteúdo estático nesta etapa) -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Certificados"
-                android:textColor="@color/creme"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:background="@color/creme"
-                android:padding="10dp"
-                android:text="Empreendedorismo — FECAP"
-                android:textColor="@color/preto" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:background="@color/creme"
-                android:padding="10dp"
-                android:text="Plano de Carreira — Insper"
-                android:textColor="@color/preto" />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="6dp"
-                android:background="@color/creme"
-                android:padding="10dp"
-                android:text="Soft Skills — ESPM"
-                android:textColor="@color/preto" />
-
-            <!-- Badges (estático) -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:text="Badges"
-                android:textColor="@color/creme"
-                android:textStyle="bold" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:orientation="horizontal">
-
-                <View
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@drawable/bg_dia_selecionado" />
-
-                <View
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/verde" />
-
-                <View
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:layout_marginEnd="10dp"
-                    android:background="@color/roxo" />
-
-                <View
-                    android:layout_width="48dp"
-                    android:layout_height="48dp"
-                    android:background="@color/creme" />
-            </LinearLayout>
-
-            <!-- Comunidades (estático) -->
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp"
-                android:text="Comunidades: Tech · STEAM · Mulheres"
-                android:textColor="@color/creme" />
-
         </LinearLayout>
-    </ScrollView>
 
-    <!-- Barra de navegação inferior, presente também na tela de Calendário -->
+        <!-- Testes -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/preto"
+            android:padding="16dp"
+            android:text="Testes de Perfil"
+            android:textColor="@color/creme" />
+
+        <!-- Botão que leva para a Agenda (Calendário) -->
+        <Button
+            android:id="@+id/btnMeusEventos"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="12dp"
+            android:backgroundTint="@color/roxo"
+            android:drawableEnd="@drawable/ic_nav_calendario"
+            android:padding="12dp"
+            android:text="Meus Eventos (Calendário)"
+            android:textColor="@color/creme" />
+
+        <!-- Certificados -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="Certificados"
+            android:textColor="@color/preto"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/cremeForte"
+            android:padding="10dp"
+            android:text="Empreendedorismo — FECAP"
+            android:textColor="@color/preto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@color/cremeForte"
+            android:padding="10dp"
+            android:text="Plano de Carreira — Insper"
+            android:textColor="@color/preto" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:background="@color/cremeForte"
+            android:padding="10dp"
+            android:text="Soft Skills — ESPM"
+            android:textColor="@color/preto" />
+
+        <!-- Comunidades (estático) -->
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginBottom="16dp"
+            android:text="Comunidades: Tech · STEAM · Mulheres"
+            android:textColor="@color/preto" />
+
+    </LinearLayout>
+
+    <!-- Barra de navegação inferior -->
     <LinearLayout
         android:id="@+id/barraNavegacaoInferior"
         android:layout_width="0dp"
         android:layout_height="56dp"
-        android:background="@color/roxo"
+        android:background="@color/amarelo"
         android:gravity="center"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -223,7 +180,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/roxo"
+            android:background="@color/amareloClaro"
             android:contentDescription="Início (Entrega 2)"
             android:src="@drawable/ic_nav_generico" />
 
@@ -233,7 +190,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/roxo"
+            android:background="@color/amareloClaro"
             android:contentDescription="Mensagens (Entrega 2)"
             android:src="@drawable/ic_nav_generico" />
 
@@ -242,7 +199,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:background="@color/roxo"
+            android:background="@color/amareloClaro"
             android:contentDescription="Ir para o Calendário"
             android:src="@drawable/ic_nav_calendario" />
 
