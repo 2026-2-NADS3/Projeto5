@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Paleta oficial de cores do app "Próxima Etapa" (definida no material de UX/branding) -->
+    <color name="creme">#FFF4D0</color>   <!-- fundo claro / texto sobre fundo escuro -->
+    <color name="verde">#51C600</color>   <!-- destaque / sucesso -->
+    <color name="amarelo">#FABB17</color> <!-- destaque / seleção (ex: dia do calendário) -->
+    <color name="roxo">#7730E2</color>    <!-- cor primária da marca (botões, logo, links) -->
+    <color name="preto">#191305</color>   <!-- fundo escuro / texto sobre fundo claro -->
+
+    <!-- Variações (tons) das cores oficiais acima, usadas só para dar
+         contraste entre um card e o fundo da tela quando as duas áreas
+         usariam a mesma cor da paleta -->
+    <color name="cremeForte">#F2DFA0</color>   <!-- creme um pouco mais escuro, para cards sobre fundo creme -->
+    <color name="amareloClaro">#FCD067</color> <!-- amarelo um pouco mais claro, para os ícones não selecionados da barra inferior -->
+</resources>
