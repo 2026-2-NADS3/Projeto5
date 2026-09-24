@@ -14,9 +14,6 @@
 
 ## Descrição
 ## 📖 Sobre o Projeto
----
-
-O Próxima Etapa é um projeto social que visa auxiliar ....
 
 <p align="center">
   <img src="imagens/Logo.jpg" alt="Logo Próxima Etapa" width="400">
@@ -26,6 +23,7 @@ O Próxima Etapa é um projeto social que visa auxiliar ....
 
 <p align="center">
   Aplicativo mobile de apoio aos estudantes atendidos pela ONG Próxima Etapa
+  O Próxima Etapa é um projeto social que visa auxiliar ....
 </p>
 
 ---
