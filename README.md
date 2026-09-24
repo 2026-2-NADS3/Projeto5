@@ -13,8 +13,7 @@
 ---
 ---
 
-## Descrição
-## 📖 Sobre o Projeto
+## Sobre o Projeto
 
 <p align="center">
   <img src="imagens/Logo.jpg" alt="Logo Próxima Etapa" width="400">
