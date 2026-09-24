@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="creme">#FFF4D0</color>
+    <color name="verde">#51C600</color>
+    <color name="amarelo">#FABB17</color>
+    <color name="roxo">#7730E2</color>
+    <color name="preto">#191305</color>
+    <color name="cremeForte">#C3BEAC</color>
+    <color name="amareloClaro">#FFE19B</color>
+</resources>
