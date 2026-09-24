@@ -19,15 +19,89 @@
   Logo KIOSK Marketplace
 </p>
 
+## 📖 Sobre o Projeto
 
 O Próxima Etapa é um projeto social que visa auxiliar ....
 
+<p align="center">
+  <img src="imagens/logo.png" alt="Logo Próxima Etapa" width="400">
+</p>
 
-## 🛠 Estrutura de pastas
+<h1 align="center">Próxima Etapa</h1>
 
+<p align="center">
+  Aplicativo mobile de apoio aos estudantes atendidos pela ONG Próxima Etapa
+</p>
 
+---
 
-## 🛠 Instalação
+## 🛠️ Tecnologias Utilizadas
+
+- Java
+- Android Studio
+- Android SDK
+- ConstraintLayout
+- Figma
+
+---
+
+## 📁 Estrutura de Pastas
+
+```
+Raiz
+├── documentos
+│   └── Entrega 1
+│   └── Entrega 2
+├── executáveis
+│   └── android.apk
+├── imagens
+├── src
+│   ├── Backend
+│   └── Frontend
+└── README.md
+```
+
+| Pasta | Conteúdo |
+|---|---|
+| `documentos` | Documentação do projeto |
+| `executáveis/android` | Arquivo APK do aplicativo |
+| `imagens` | Imagens e recursos visuais usados |
+| `src/Backend` | Código-fonte do Backend |
+| `src/Frontend` | Código-fonte do Frontend (telas e layouts) |
+
+---
+
+## 📲 Instalação
+
+### Requisitos
+
+- Dispositivo Android 8.0 (API 26) ou superior
+- Arquivo APK do aplicativo (disponível em `executáveis/android`)
+
+### Instalando o APK
+
+1. Faça o download do arquivo `ProximaEtapa.apk`;
+2. Transfira o APK para o dispositivo Android, caso necessário;
+3. Abra o arquivo APK;
+4. Caso solicitado, habilite a opção **"Instalar aplicativos de fontes desconhecidas"**;
+5. Conclua a instalação;
+6. Abra o aplicativo **Próxima Etapa** e utilize normalmente.
+
+---
+
+## 💻 Executando o Projeto no Android Studio
+
+1. Clone este repositório:
+
+   ```bash
+   git clone https://github.com/2026-2-NADS3/Projeto5.git
+   ```
+
+2. Abra o projeto no Android Studio;
+3. Aguarde o download das dependências do Gradle;
+4. Conecte um dispositivo Android ou inicie um emulador;
+5. Entre na pasta documentos -> Entrega1 -> ProgramacaoMobile
+6. Execute o projeto através do botão **Run** ▶️.
 
 
 ## 📋 Licença/License
