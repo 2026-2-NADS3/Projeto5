@@ -80,4 +80,5 @@ Cada execução registra exatamente o que foi feito com carimbo de data e hora n
 [2026-09-23 22:30:00] SUCESSO: Backup criado em ./backups/backup_dev_20260923_223000.tar.gz (Tamanho: 12K)
 [2026-09-23 22:30:00] Aplicando retenção (Mantendo apenas os 3 backups mais recentes)...
 [2026-09-23 22:30:00] Nenhum backup antigo precisou ser removido.
+>>>>>>> c52d41cbabe810ed086f4bb3d3c74244465c1111
 [2026-09-23 22:30:00] === Processo de backup concluído com sucesso ===
