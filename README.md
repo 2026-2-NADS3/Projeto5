@@ -23,7 +23,7 @@
 
 <p align="center">
   Aplicativo mobile de apoio aos estudantes atendidos pela ONG Próxima Etapa
-  O Próxima Etapa é um projeto social que visa auxiliar ....
+  \nO Próxima Etapa é um projeto social que visa auxiliar ....
 </p>
 
 ---
