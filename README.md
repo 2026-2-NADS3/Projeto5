@@ -1,84 +1,48 @@
-# Próxima Etapa — App do Aluno (Entrega 1 — Programação Mobile)
+# FECAP - Fundação de Comércio Álvares Penteado
 
-Projeto Android (Java) do PI, referente à **Entrega 1** da Unidade Curricular de
-Programação Mobile (3º ADS). Aplicação com 4 telas navegáveis, seguindo os
-wireframes da UX (Login, Cadastro, Perfil e Calendário/Agenda).
+<p align="center">
+<a href= "https://www.fecap.br/"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhZPrRa89Kma0ZZogxm0pi-tCn_TLKeHGVxywp-LXAFGR3B1DPouAJYHgKZGV0XTEf4AE&usqp=CAU" alt="FECAP - Fundação de Comércio Álvares Penteado" border="0"></a>
+</p>
 
-## Como abrir e rodar
+# Próxima Etapa
 
-1. Abra a pasta `ProximaEtapa-Entrega1` no Android Studio (Open -> selecione a pasta).
-2. Aguarde o Gradle sincronizar (baixa as dependências automaticamente).
-3. Rode em um emulador ou celular com **Android 7.0 (API 24) ou superior**.
-4. O app abre direto na tela de **Login**.
+## App
 
-## Fluxo de telas (todas navegáveis entre si)
+## Integrantes: <a href="https://www.linkedin.com/in/danilooliveiradealmeida">Danilo Almeida</a>, <a href="https://www.linkedin.com/in/davi-bigotto-018721353/">Davi Bigotto</a>, <a href="https://www.linkedin.com/in/katiely-silva-264387295/">Katiely Silva</a>, <a href="https://www.linkedin.com/in/laura-pelizzer-b928142b4/">Laura Pelizzer</a>, <a href="https://www.linkedin.com/in/matheus-quio-2797b4301/">Matheus Quio</a>
 
-```
-Login  --(Entrar)-->            Perfil
-Login  --(Cadastrar conta)-->   Cadastro
-Cadastro --(Cadastrar)-->       Login
-Perfil --(Meus Eventos / ícone calendário)--> Calendário
-Calendário --(ícone perfil)--> Perfil
-```
+## Professores Orientadores: <a href="https://www.linkedin.com/in/eduardo-savino/">Eduardo Savino Gomes</a>, <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araujo Pinto</a>, <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>, <a href="https://www.linkedin.com/in/adriano-valente/">Adriano Valente</a>, <a href="https://www.linkedin.com/in/jbuesso/">José Carlos Buesso Junior</a>
 
-## O que foi implementado nesta etapa (Entrega 1)
+## Descrição
 
-- 4 Activities (`LoginActivity`, `CadastroActivity`, `PerfilActivity`,
-  `CalendarioActivity`) conectadas por `Intent` + `putExtra`/`getStringExtra`,
-  exatamente como visto em aula (Aula04/Exemplo02, Aula05, Aula06).
-- Layouts em `ConstraintLayout`, com `TextView`, `EditText`, `Button`,
-  `ImageView`/`ImageButton`.
-- Duas classes de modelo (POJO), no padrão de `Livro.java`/`Pet.java`:
-  - `Usuario.java` — dados do aluno (nome, email, escola).
-  - `Evento.java` — evento da agenda; calcula a **carga horária em horas**
-    (dado numérico) a partir dos horários de início e fim.
-- **Função principal da etapa**: exibição da Agenda individual do aluno
-  (`CalendarioActivity`), com o mês navegável (setas `<`/`>` percorrendo um
-  array de meses) e o evento do dia com sua carga horária calculada — está
-  toda programada, comentada e funcionando.
-- Validações simples de formulário (campos obrigatórios, confirmação de
-  senha) usando apenas os recursos já vistos em aula.
-- Logo da Próxima Etapa como **imagem** (`ImageView` +
-  `drawable/logo_proxima_etapa.xml`).
-- Cores 100% baseadas na paleta oficial do projeto (`res/values/colors.xml`):
-  `#FFF4D0`, `#51C600`, `#FABB17`, `#7730E2`, `#191305`.
+<p align="center">
+<img src="Imagens/PHOTO-2026-03-12-23-22-06.jpg" alt="NOME DO JOGO" border="0">
+  Logo KIOSK Marketplace
+</p>
 
-## Pendente de propósito para a Entrega 2 (fora do escopo desta etapa)
 
-Conforme o Plano de Entrega, a Entrega 1 pede só a fundação da navegação e a
-função principal (Login → Cursos/Agenda). Por isso ficaram de fora,
-intencionalmente:
+O Próxima Etapa é um projeto social que visa auxiliar ....
 
-- Integração com API/banco de dados real (login e cadastro são simulados).
-- Persistência local dos dados (SQLite/Room).
-- QR Code de presença, certificados reais, testes de perfil, chat/mensagens.
-- Os dois ícones extras da barra inferior (Início/Mensagens) estão nos
-  layouts mas sem navegação — são placeholders comentados no código,
-  reservados para funcionalidades da Entrega 2.
-- A grade de dias do calendário é fixa (mostra Setembro/2026, como no
-  protótipo); só o nome do mês no topo é dinâmico.
 
-## Trocar o logo pela imagem oficial
+## 🛠 Estrutura de pastas
 
-O arquivo `app/src/main/res/drawable/logo_proxima_etapa.xml` é um placeholder
-vetorial simples, só para o projeto compilar sem depender de arquivos
-externos. Para usar a logo real (a mesma do wireframe):
 
-1. Exporte a logo oficial como PNG, por exemplo `logo_proxima_etapa.png`.
-2. Copie o arquivo para `app/src/main/res/drawable/`.
-3. Apague o `logo_proxima_etapa.xml` (mesmo nome, extensão diferente).
 
-Como o `ImageView` já referencia `@drawable/logo_proxima_etapa`, a troca é
-automática — não precisa mexer em nenhum layout ou código Java.
+## 🛠 Instalação
 
-## Estrutura do código-fonte
 
-```
-app/src/main/java/com/example/proximaetapa/
-├── Usuario.java            (classe de modelo)
-├── Evento.java              (classe de modelo)
-├── LoginActivity.java       (tela inicial / main)
-├── CadastroActivity.java
-├── PerfilActivity.java
-└── CalendarioActivity.java  (função principal da etapa)
-```
+## 📋 Licença/License
+Desenvolvido por: <a href="https://www.linkedin.com/in/danilooliveiradealmeida">Danilo Almeida</a>, <a href="https://www.linkedin.com/in/davi-bigotto-018721353/">Davi Bigotto</a>, <a href="https://www.linkedin.com/in/katiely-silva-264387295/">Katiely Silva</a>, <a href="https://www.linkedin.com/in/laura-pelizzer-b928142b4/">Laura Pelizzer</a>, <a href="https://www.linkedin.com/in/matheus-quio-2797b4301/">Matheus Quio</a>
+
+Este trabalho está licenciado sob uma <a href="[https://www.linkedin.com/in/danilooliveiradealmeida](https://creativecommons.org/licenses/by/4.0/)">Licença CC BY-ND 4.0</a>,
+
+## 🎓 Referências
+
+Aqui estão as referências usadas no projeto.
+
+1. <https://github.com/iuricode/readme-template>
+2. <https://github.com/gabrieldejesus/readme-model>
+3. <https://chooser-beta.creativecommons.org/>
+4. <https://freesound.org/>
+5. <https://www.toptal.com/developers/gitignore>
+6. Músicas por: <a href="https://freesound.org/people/DaveJf/sounds/616544/"> DaveJf </a> e <a href="https://freesound.org/people/DRFX/sounds/338986/"> DRFX </a> ambas com Licença CC 0.
+
