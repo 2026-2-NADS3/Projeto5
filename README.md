@@ -11,13 +11,8 @@
 ## Professores Orientadores: <a href="https://www.linkedin.com/in/eduardo-savino/">Eduardo Savino Gomes</a>, <a href="https://www.linkedin.com/in/ronaldo-araujo-pinto-3542811a/">Ronaldo Araujo Pinto</a>, <a href="https://www.linkedin.com/in/francisco-escobar/">Francisco Escobar</a>, <a href="https://www.linkedin.com/in/adriano-valente/">Adriano Valente</a>, <a href="https://www.linkedin.com/in/jbuesso/">José Carlos Buesso Junior</a>
 
 ## Descrição
-
-<p align="center">
-<img src="Imagens/PHOTO-2026-03-12-23-22-06.jpg" alt="NOME DO JOGO" border="0">
-  Logo Próxima Etapa
-</p>
-
 ## 📖 Sobre o Projeto
+---
 
 O Próxima Etapa é um projeto social que visa auxiliar ....
 
