@@ -17,7 +17,7 @@
 O Próxima Etapa é um projeto social que visa auxiliar ....
 
 <p align="center">
-  <img src="imagens/Logo.png" alt="Logo Próxima Etapa" width="400">
+  <img src="imagens/Logo.jpg" alt="Logo Próxima Etapa" width="400">
 </p>
 
 <h1 align="center">Próxima Etapa</h1>
