@@ -1,0 +1,27 @@
+PASS tests/auth.test.ts
+  Teste 4 — middleware autenticar
+    ✓ requisição sem token → 401 (4 ms)
+    ✓ token inválido → 401 (1 ms)
+    ✓ token válido → acesso liberado com o aluno identificado (4 ms)
+
+PASS tests/qrcode.test.ts
+  Teste 3 — validarQrCode
+    ✓ token válido retorna o ID da atividade (2 ms)
+    ✓ token expirado é rejeitado (1 ms)
+    ✓ token com assinatura alterada é rejeitado (1 ms)
+
+PASS tests/presencaService.test.ts
+  Teste 1 — PresencaService.registrar
+    ✓ impede presença duplicada no mesmo encontro e não chama salvar() (7 ms)
+    ✓ registra normalmente quando ainda não há presença para o encontro (1 ms)
+
+PASS tests/participacao.test.ts
+  Teste 2 — calcularPercentualParticipacao
+    ✓ 6 presenças em 8 encontros = 75%
+    ✓ 0 encontros = 0%, sem erro de divisão por zero (1 ms)
+
+Test Suites: 4 passed, 4 total
+Tests:       10 passed, 10 total
+Snapshots:   0 total
+Time:        1.992 s, estimated 2 s
+Ran all test suites.
