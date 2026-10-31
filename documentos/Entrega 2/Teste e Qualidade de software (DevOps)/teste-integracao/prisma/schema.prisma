@@ -1,0 +1,64 @@
+// Schema mínimo para os testes de integração — Próxima Etapa (App do Aluno)
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model Aluno {
+  id         Int         @id @default(autoincrement())
+  nome       String
+  email      String      @unique
+  senhaHash  String      @map("senha_hash")
+  inscricoes Inscricao[]
+  presencas  Presenca[]
+
+  @@map("aluno")
+}
+
+model Curso {
+  id           Int         @id @default(autoincrement())
+  nome         String
+  cargaHoraria Int         @map("carga_horaria")
+  local        String
+  inscricoes   Inscricao[]
+  encontros    Encontro[]
+
+  @@map("curso")
+}
+
+model Inscricao {
+  alunoId Int   @map("aluno_id")
+  cursoId Int   @map("curso_id")
+  aluno   Aluno @relation(fields: [alunoId], references: [id])
+  curso   Curso @relation(fields: [cursoId], references: [id])
+
+  @@id([alunoId, cursoId])
+  @@map("inscricao")
+}
+
+model Encontro {
+  id        Int        @id @default(autoincrement())
+  cursoId   Int        @map("curso_id")
+  dataHora  DateTime   @map("data_hora")
+  curso     Curso      @relation(fields: [cursoId], references: [id])
+  presencas Presenca[]
+
+  @@map("encontro")
+}
+
+model Presenca {
+  id           Int      @id @default(autoincrement())
+  alunoId      Int      @map("aluno_id")
+  encontroId   Int      @map("encontro_id")
+  registradaEm DateTime @default(now()) @map("registrada_em")
+  aluno        Aluno    @relation(fields: [alunoId], references: [id])
+  encontro     Encontro @relation(fields: [encontroId], references: [id])
+
+  // Regra de negócio do briefing: uma única presença por aluno por encontro
+  @@unique([alunoId, encontroId], map: "presenca_aluno_encontro_unique")
+  @@map("presenca")
+}
