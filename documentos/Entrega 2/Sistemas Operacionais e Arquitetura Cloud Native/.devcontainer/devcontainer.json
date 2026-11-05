@@ -1,0 +1,58 @@
+{
+  // ===========================================================================
+  //  devcontainer.json - ambiente de desenvolvimento em nuvem
+  // ---------------------------------------------------------------------------
+  //  Para que serve: permite rodar este projeto no GitHub Codespaces, direto
+  //  do navegador, sem instalar Docker Desktop nem WSL na maquina local.
+  //
+  //  O recurso "docker-in-docker" instala um daemon Docker completo dentro do
+  //  ambiente, o que torna possivel rodar "docker compose up" normalmente.
+  //
+  //  As portas 8080 e 3000 sao encaminhadas para o navegador automaticamente.
+  // ===========================================================================
+
+  "name": "Proxima Etapa - Cloud Native",
+
+  // Imagem base enxuta do Ubuntu, mantida pela Microsoft para devcontainers.
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
+
+  "features": {
+    // Docker Engine + Docker Compose v2 dentro do ambiente.
+    "ghcr.io/devcontainers/features/docker-in-docker:2": {
+      "version": "latest",
+      "dockerDashComposeVersion": "v2"
+    }
+  },
+
+  // Portas abertas para o navegador. A 8080 abre sozinha na visualizacao.
+  "forwardPorts": [8080, 3000],
+
+  "portsAttributes": {
+    "8080": {
+      "label": "Painel administrativo",
+      "onAutoForward": "openPreview"
+    },
+    "3000": {
+      "label": "API (Node/Express)",
+      "onAutoForward": "silent"
+    }
+  },
+
+  // 2 vCPUs e' o tamanho que consome menos da cota gratuita.
+  "hostRequirements": {
+    "cpus": 2,
+    "memory": "8gb"
+  },
+
+  // Preparacao automatica: cria o .env a partir do modelo, se ainda nao existir,
+  // e normaliza o fim de linha dos scripts (protege contra CRLF).
+  "postCreateCommand": "bash .devcontainer/preparar.sh",
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-azuretools.vscode-docker"
+      ]
+    }
+  }
+}

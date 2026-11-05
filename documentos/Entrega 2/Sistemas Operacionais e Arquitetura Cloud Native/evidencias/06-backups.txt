@@ -1,0 +1,7 @@
+total 40K    
+drwxr-xr-x    2 root     root        4.0K Nov  4 20:01 logs
+-rw-r--r--    1 root     root         940 Nov  4 20:03 proximaetapa_2026-11-04_20-03-43.tar.gz
+-rw-r--r--    1 root     root        4.5K Nov  4 20:09 proximaetapa_2026-11-04_20-09-01.tar.gz
+-rw-r--r--    1 root     root        4.5K Nov  4 20:09 proximaetapa_2026-11-04_20-09-16.tar.gz
+-rw-r--r--    1 root     root        4.5K Nov  4 20:12 proximaetapa_2026-11-04_20-12-49.tar.gz
+-rw-r--r--    1 root     root        4.5K Nov  4 20:13 proximaetapa_2026-11-04_20-13-50.tar.gz

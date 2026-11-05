@@ -1,0 +1,302 @@
+/* ===========================================================================
+   estilo.css - Painel administrativo Proxima Etapa
+   =========================================================================== */
+
+:root {
+  --tinta:        #1b2430;
+  --tinta-fraca:  #5d6b7a;
+  --papel:        #f6f7f9;
+  --superficie:   #ffffff;
+  --borda:        #e2e6ea;
+  --destaque:     #2f6f8f;
+  --destaque-leve:#eaf2f6;
+  --verde:        #3f7d4e;
+  --ambar:        #9a6a1f;
+  --vermelho:     #a8433a;
+  --raio:         10px;
+  --sombra:       0 1px 2px rgba(27, 36, 48, .06), 0 4px 12px rgba(27, 36, 48, .04);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--papel);
+  color: var(--tinta);
+  font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+/* --- Topo ---------------------------------------------------------------- */
+.topo {
+  background: var(--superficie);
+  border-bottom: 1px solid var(--borda);
+}
+.topo-interno {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+.marca { display: flex; align-items: center; gap: 12px; }
+.marca-sigla {
+  width: 42px; height: 42px;
+  display: grid; place-items: center;
+  background: var(--destaque);
+  color: #fff;
+  border-radius: var(--raio);
+  font-weight: 700;
+  letter-spacing: .5px;
+}
+.marca h1 { margin: 0; font-size: 18px; font-weight: 650; }
+.marca p  { margin: 0; font-size: 13px; color: var(--tinta-fraca); }
+
+.estado {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--tinta-fraca);
+  background: var(--papel);
+  border: 1px solid var(--borda);
+  border-radius: 999px;
+  padding: 6px 14px;
+}
+.ponto {
+  width: 9px; height: 9px; border-radius: 50%;
+  background: var(--ambar);
+  flex-shrink: 0;
+}
+.ponto.ok    { background: var(--verde); }
+.ponto.falha { background: var(--vermelho); }
+
+/* --- Conteudo ------------------------------------------------------------ */
+main {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 24px 20px 48px;
+}
+
+/* --- Cartoes ------------------------------------------------------------- */
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.cartao {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 16px;
+  box-shadow: var(--sombra);
+}
+.cartao .rotulo {
+  display: block;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .6px;
+  color: var(--tinta-fraca);
+  margin-bottom: 6px;
+}
+.cartao strong {
+  font-size: 28px;
+  font-weight: 650;
+  font-variant-numeric: tabular-nums;
+}
+
+/* --- Abas ---------------------------------------------------------------- */
+.abas {
+  display: flex;
+  gap: 4px;
+  border-bottom: 1px solid var(--borda);
+  margin-bottom: 18px;
+  overflow-x: auto;
+}
+.aba {
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 10px 14px;
+  font: inherit;
+  font-size: 14px;
+  color: var(--tinta-fraca);
+  cursor: pointer;
+  white-space: nowrap;
+}
+.aba:hover { color: var(--tinta); }
+.aba.ativa {
+  color: var(--destaque);
+  border-bottom-color: var(--destaque);
+  font-weight: 550;
+}
+
+/* --- Paineis ------------------------------------------------------------- */
+.painel { display: none; }
+.painel.ativo { display: block; }
+
+.painel-topo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 12px;
+  flex-wrap: wrap;
+}
+.painel-topo h2 { margin: 0; font-size: 16px; font-weight: 600; }
+.origem {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  color: var(--tinta-fraca);
+  background: var(--destaque-leve);
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.tabela-area {
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  overflow-x: auto;
+  box-shadow: var(--sombra);
+}
+.carregando, .erro {
+  margin: 0;
+  padding: 24px;
+  color: var(--tinta-fraca);
+  font-size: 14px;
+}
+.erro { color: var(--vermelho); }
+
+table { width: 100%; border-collapse: collapse; }
+thead th {
+  text-align: left;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .5px;
+  color: var(--tinta-fraca);
+  font-weight: 600;
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--borda);
+  background: #fbfcfd;
+  white-space: nowrap;
+}
+tbody td {
+  padding: 11px 16px;
+  border-bottom: 1px solid var(--borda);
+  vertical-align: middle;
+}
+tbody tr:last-child td { border-bottom: none; }
+tbody tr:hover { background: #fafbfc; }
+td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+/* Barra de percentual */
+.barra-area { display: flex; align-items: center; gap: 10px; min-width: 150px; }
+.barra {
+  flex: 1;
+  height: 6px;
+  background: var(--borda);
+  border-radius: 999px;
+  overflow: hidden;
+}
+.barra span {
+  display: block;
+  height: 100%;
+  background: var(--destaque);
+  border-radius: 999px;
+}
+.barra-valor {
+  font-size: 13px;
+  font-variant-numeric: tabular-nums;
+  color: var(--tinta-fraca);
+  min-width: 46px;
+  text-align: right;
+}
+
+.etiqueta {
+  display: inline-block;
+  font-size: 12px;
+  padding: 2px 9px;
+  border-radius: 999px;
+  background: var(--destaque-leve);
+  color: var(--destaque);
+  white-space: nowrap;
+}
+
+/* --- Formulario ---------------------------------------------------------- */
+.registro {
+  margin-top: 32px;
+  background: var(--superficie);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  padding: 20px;
+  box-shadow: var(--sombra);
+}
+.ajuda { font-size: 13px; color: var(--tinta-fraca); margin: 0 0 16px; }
+.ajuda code, footer code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-size: 12px;
+  background: var(--papel);
+  border: 1px solid var(--borda);
+  border-radius: 4px;
+  padding: 1px 5px;
+}
+#form-presenca {
+  display: flex;
+  gap: 12px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+}
+#form-presenca label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+  flex: 1 1 190px;
+}
+select {
+  font: inherit;
+  font-size: 14px;
+  color: var(--tinta);
+  padding: 8px 10px;
+  border: 1px solid var(--borda);
+  border-radius: 7px;
+  background: var(--superficie);
+}
+select:focus-visible, button:focus-visible, .aba:focus-visible {
+  outline: 2px solid var(--destaque);
+  outline-offset: 2px;
+}
+button[type="submit"] {
+  font: inherit;
+  font-size: 14px;
+  font-weight: 550;
+  color: #fff;
+  background: var(--destaque);
+  border: none;
+  border-radius: 7px;
+  padding: 9px 20px;
+  cursor: pointer;
+}
+button[type="submit"]:hover { background: #28607c; }
+button[type="submit"]:disabled { opacity: .55; cursor: default; }
+
+.resposta { margin: 14px 0 0; font-size: 13px; min-height: 20px; }
+.resposta.ok    { color: var(--verde); }
+.resposta.falha { color: var(--vermelho); }
+
+/* --- Rodape -------------------------------------------------------------- */
+footer {
+  border-top: 1px solid var(--borda);
+  background: var(--superficie);
+}
+footer p {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 18px 20px;
+  font-size: 13px;
+  color: var(--tinta-fraca);
+}

@@ -1,0 +1,28 @@
+# =============================================================================
+#  .dockerignore - servico de backup
+# =============================================================================
+
+# Credenciais - chegam por variavel de ambiente, nunca pela imagem.
+.env
+.env.*
+!.env.example
+
+# Backups e logs gerados em testes locais: iriam para dentro da imagem
+# e a deixariam enorme sem nenhuma utilidade.
+backups
+logs
+*.tar.gz
+*.sql
+
+# Controle de versao
+.git
+.gitignore
+
+# Editor e sistema operacional
+.vscode
+.idea
+.DS_Store
+Thumbs.db
+
+# Documentacao
+*.md

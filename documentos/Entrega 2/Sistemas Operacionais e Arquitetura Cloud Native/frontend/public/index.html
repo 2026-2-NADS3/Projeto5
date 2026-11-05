@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Próxima Etapa — Painel Administrativo</title>
+  <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+  <header class="topo">
+    <div class="topo-interno">
+      <div class="marca">
+        <span class="marca-sigla">PE</span>
+        <div>
+          <h1>Próxima Etapa</h1>
+          <p>Painel administrativo</p>
+        </div>
+      </div>
+      <div class="estado" id="estado">
+        <span class="ponto" id="ponto-estado"></span>
+        <span id="texto-estado">verificando API…</span>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- Cartões de resumo -->
+    <section class="cartoes" id="cartoes" aria-label="Resumo geral">
+      <article class="cartao"><span class="rotulo">Alunos</span><strong id="m-alunos">—</strong></article>
+      <article class="cartao"><span class="rotulo">Cursos ativos</span><strong id="m-cursos">—</strong></article>
+      <article class="cartao"><span class="rotulo">Matrículas ativas</span><strong id="m-matriculas">—</strong></article>
+      <article class="cartao"><span class="rotulo">Presenças</span><strong id="m-presencas">—</strong></article>
+      <article class="cartao"><span class="rotulo">Encontros futuros</span><strong id="m-encontros">—</strong></article>
+    </section>
+
+    <!-- Abas -->
+    <nav class="abas" role="tablist">
+      <button class="aba ativa" data-painel="painel-cursos" role="tab">Cursos</button>
+      <button class="aba" data-painel="painel-participacao" role="tab">Participação</button>
+      <button class="aba" data-painel="painel-encontros" role="tab">Agenda</button>
+      <button class="aba" data-painel="painel-alunos" role="tab">Alunos</button>
+    </nav>
+
+    <section id="painel-cursos" class="painel ativo">
+      <div class="painel-topo">
+        <h2>Cursos oferecidos</h2>
+        <span class="origem">GET /api/cursos</span>
+      </div>
+      <div class="tabela-area" id="area-cursos"><p class="carregando">Carregando…</p></div>
+    </section>
+
+    <section id="painel-participacao" class="painel">
+      <div class="painel-topo">
+        <h2>Participação por aluno</h2>
+        <span class="origem">GET /api/participacao</span>
+      </div>
+      <div class="tabela-area" id="area-participacao"><p class="carregando">Carregando…</p></div>
+    </section>
+
+    <section id="painel-encontros" class="painel">
+      <div class="painel-topo">
+        <h2>Próximos encontros</h2>
+        <span class="origem">GET /api/encontros</span>
+      </div>
+      <div class="tabela-area" id="area-encontros"><p class="carregando">Carregando…</p></div>
+    </section>
+
+    <section id="painel-alunos" class="painel">
+      <div class="painel-topo">
+        <h2>Alunos cadastrados</h2>
+        <span class="origem">GET /api/alunos</span>
+      </div>
+      <div class="tabela-area" id="area-alunos"><p class="carregando">Carregando…</p></div>
+    </section>
+
+    <!-- Teste de escrita no banco -->
+    <section class="painel ativo registro">
+      <div class="painel-topo">
+        <h2>Registrar presença</h2>
+        <span class="origem">POST /api/presencas</span>
+      </div>
+      <p class="ajuda">
+        Grava um check-in no banco. Serve para demonstrar que a escrita persiste
+        no volume mesmo depois de <code>docker compose down</code> e
+        <code>up</code> novamente.
+      </p>
+      <form id="form-presenca">
+        <label>
+          Aluno
+          <select id="sel-aluno" required></select>
+        </label>
+        <label>
+          Encontro
+          <select id="sel-encontro" required></select>
+        </label>
+        <label>
+          Método
+          <select id="sel-metodo">
+            <option value="manual">manual</option>
+            <option value="qrcode">qrcode</option>
+          </select>
+        </label>
+        <button type="submit">Registrar</button>
+      </form>
+      <p id="resposta-presenca" class="resposta" role="status"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      Projeto Próxima Etapa — UC Cloud Native, Entrega 2.
+      Frontend <strong>Nginx</strong> → API <strong>Node/Express</strong> →
+      Banco <strong>PostgreSQL</strong>, em containers na rede
+      <code>rede_proximaetapa</code>.
+    </p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

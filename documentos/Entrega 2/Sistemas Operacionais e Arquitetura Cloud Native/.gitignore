@@ -1,0 +1,38 @@
+# =============================================================================
+#  .gitignore - Projeto Proxima Etapa
+# =============================================================================
+
+# --- CREDENCIAIS (o item mais importante deste arquivo) ----------------------
+.env
+.env.local
+.env.producao
+*.pem
+*.key
+!.env.example
+
+# --- Dependencias ------------------------------------------------------------
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# --- Artefatos de backup e log ----------------------------------------------
+backups/
+logs/
+*.tar.gz
+*.dump
+
+# Dumps de banco. O .gitkeep e os scripts de init continuam versionados.
+*.sql
+!db/init/*.sql
+
+# --- Editor e sistema operacional -------------------------------------------
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Docker ------------------------------------------------------------------
+# Sobrescritas locais de compose nao devem ir para o repositorio.
+docker-compose.override.yml

@@ -1,0 +1,29 @@
+# =============================================================================
+#  .dockerignore - frontend
+# =============================================================================
+
+# Credenciais (o painel nao usa nenhuma, mas a regra fica explicita)
+.env
+.env.*
+!.env.example
+
+# Controle de versao
+.git
+.gitignore
+
+# Editor e sistema operacional
+.vscode
+.idea
+*.swp
+.DS_Store
+Thumbs.db
+
+# Documentacao e rascunhos
+*.md
+rascunhos
+mockups
+*.fig
+*.psd
+
+# Logs
+*.log

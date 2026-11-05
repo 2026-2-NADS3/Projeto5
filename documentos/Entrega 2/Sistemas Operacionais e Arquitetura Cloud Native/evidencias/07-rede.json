@@ -1,0 +1,75 @@
+[
+    {
+        "Name": "rede_proximaetapa",
+        "Id": "2f92e17ef6ddbb9402dd6f5c472fa57664052b9aef1a0d34f44a97a6c99910d8",
+        "Created": "2026-11-04T22:58:55.922997888Z",
+        "Scope": "local",
+        "Driver": "bridge",
+        "EnableIPv4": true,
+        "EnableIPv6": false,
+        "IPAM": {
+            "Driver": "default",
+            "Options": null,
+            "Config": [
+                {
+                    "Subnet": "172.18.0.0/16",
+                    "Gateway": "172.18.0.1"
+                }
+            ]
+        },
+        "Internal": false,
+        "Attachable": false,
+        "Ingress": false,
+        "ConfigFrom": {
+            "Network": ""
+        },
+        "ConfigOnly": false,
+        "Options": {},
+        "Labels": {
+            "com.docker.compose.config-hash": "e99f77e46fdcdbacb362ccbc5c26ce59a0a236be2e888e9bce45b93662ae44ae",
+            "com.docker.compose.network": "rede_proximaetapa",
+            "com.docker.compose.project": "proximaetapa-docker",
+            "com.docker.compose.version": "5.5.1"
+        },
+        "Containers": {
+            "8712aac2c587de5c78f62d6e0250dcaed69474dda89870fbf6bb3b29cce8f9b9": {
+                "Name": "pe_db",
+                "EndpointID": "b054e10d04fff8f59d4ecbfd86723c6bdcee10c8febc1d3a5ffd9c4eb4084efd",
+                "MacAddress": "d6:3d:50:80:a2:3a",
+                "IPv4Address": "172.18.0.2/16",
+                "IPv6Address": ""
+            },
+            "9310d818820dd31e685240ecbacd53bac07addbdc9f9e2b8ef77564a13c6f748": {
+                "Name": "pe_api",
+                "EndpointID": "05a5fe018a55dd8db5af7df4c91037ed0503bc952db59b4c55d18f566f84a9ff",
+                "MacAddress": "82:f7:2f:9b:56:4e",
+                "IPv4Address": "172.18.0.3/16",
+                "IPv6Address": ""
+            },
+            "e35dd7391e3c1c1248464d36313c70da0161c2eeb4fe4f5fcb6e08e96ab5a982": {
+                "Name": "pe_backup",
+                "EndpointID": "52b37d0c2c8213994929578353233fe1cd21c14b5cae47af58fb642951d762cc",
+                "MacAddress": "fe:f2:f7:4f:5e:7b",
+                "IPv4Address": "172.18.0.5/16",
+                "IPv6Address": ""
+            },
+            "ff48c2bafef0e677007230cb5f5df23fdff537a5603663ab763cc89445d4c94f": {
+                "Name": "pe_web",
+                "EndpointID": "2e23219b26781ab13f3356bc91adbc0f5dc5689926c58fd51720d3762d9cec9f",
+                "MacAddress": "d2:79:c0:8e:b0:01",
+                "IPv4Address": "172.18.0.4/16",
+                "IPv6Address": ""
+            }
+        },
+        "Status": {
+            "IPAM": {
+                "Subnets": {
+                    "172.18.0.0/16": {
+                        "IPsInUse": 7,
+                        "DynamicIPsAvailable": 65529
+                    }
+                }
+            }
+        }
+    }
+]

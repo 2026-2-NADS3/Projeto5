@@ -1,0 +1,5 @@
+DB_HOST=db
+DB_PORTA=5432
+DB_USUARIO=pe_app
+DB_NOME=proximaetapa
+DB_SENHA=pe_senha_2026

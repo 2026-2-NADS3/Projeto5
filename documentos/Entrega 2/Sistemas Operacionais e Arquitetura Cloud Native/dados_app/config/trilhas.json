@@ -1,0 +1,8 @@
+{
+  "trilhas": [
+    { "id": 1, "nome": "Linguagens", "cor": "#3B6E8F" },
+    { "id": 2, "nome": "Exatas",     "cor": "#8F5A3B" },
+    { "id": 3, "nome": "Humanas",    "cor": "#5A8F3B" },
+    { "id": 4, "nome": "Carreira",   "cor": "#6E3B8F" }
+  ]
+}

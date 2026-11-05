@@ -1,0 +1,8 @@
+{
+  "nome": "Proxima Etapa",
+  "versao": "1.0.0",
+  "ambiente": "desenvolvimento",
+  "api_base_url": "/api",
+  "limite_upload_mb": 5,
+  "notificacoes_ativas": true
+}

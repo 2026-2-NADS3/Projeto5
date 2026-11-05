@@ -1,0 +1,197 @@
+# =============================================================================
+#  docker-compose.yml - Projeto Proxima Etapa
+#  UC Cloud Native - Entrega 2 (Conteinerizacao)
+# -----------------------------------------------------------------------------
+#  ARQUITETURA: micro-arquitetura de 3 camadas + servico de backup
+#
+#    web     (Nginx)       -> camada de apresentacao: painel administrativo
+#    api     (Node/Express)-> camada de aplicacao: regras e acesso ao banco
+#    db      (PostgreSQL)  -> camada de dados
+#    backup  (Alpine+cron) -> servico auxiliar: evolucao do script da Entrega 1
+#
+#  Os quatro containers conversam pela rede customizada "rede_proximaetapa",
+#  sempre pelo NOME DO SERVICO (db, api, web), nunca por endereco IP.
+#
+#  Apenas o "web" publica porta para o host. O banco nao fica acessivel de
+#  fora da rede Docker, que e' o comportamento desejado em producao.
+# -----------------------------------------------------------------------------
+#  Nao existe nenhuma credencial neste arquivo: tudo vem do .env.
+# =============================================================================
+
+services:
+
+  # ===========================================================================
+  #  CAMADA DE DADOS - PostgreSQL
+  # ===========================================================================
+  db:
+    image: postgres:16-alpine
+    container_name: pe_db
+    restart: unless-stopped
+
+    environment:
+      # Variaveis que a imagem oficial do Postgres usa para criar o banco.
+      POSTGRES_DB:       ${DB_NOME}
+      POSTGRES_USER:     ${DB_USUARIO}
+      POSTGRES_PASSWORD: ${DB_SENHA}
+      # Guarda os dados em uma subpasta do volume. Isso evita conflito com
+      # arquivos de metadados que o Docker cria na raiz do ponto de montagem.
+      PGDATA: /var/lib/postgresql/data/pgdata
+      TZ: ${TZ:-America/Sao_Paulo}
+
+    volumes:
+      # VOLUME NOMEADO: aqui mora a persistencia. Sobrevive a
+      # "docker compose down" e so' e' apagado com "down -v".
+      - dados_postgres:/var/lib/postgresql/data
+
+      # Scripts de inicializacao, montados apenas para leitura (:ro).
+      # A imagem os executa somente quando o volume esta vazio.
+      - ./db/init:/docker-entrypoint-initdb.d:ro
+
+    networks:
+      - rede_proximaetapa
+
+    # O banco NAO publica porta para o host de proposito.
+    # Para inspecionar com um cliente externo (DBeaver, pgAdmin), descomente:
+    # ports:
+    #   - "5432:5432"
+
+    healthcheck:
+      # pg_isready confirma que o banco aceita conexoes. O "api" e o "backup"
+      # esperam este healthcheck passar antes de subir.
+      test: ["CMD-SHELL", "pg_isready -U ${DB_USUARIO} -d ${DB_NOME} -q"]
+      interval: 10s
+      timeout: 5s
+      retries: 6
+      start_period: 20s
+
+  # ===========================================================================
+  #  CAMADA DE APLICACAO - API Node.js + Express
+  # ===========================================================================
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    image: proximaetapa/api:1.0
+    container_name: pe_api
+    restart: unless-stopped
+
+    environment:
+      # DB_HOST = "db" -> nome do servico acima, resolvido pelo DNS da rede.
+      DB_HOST:   db
+      DB_PORTA:  5432
+      DB_NOME:     ${DB_NOME}
+      DB_USUARIO:  ${DB_USUARIO}
+      DB_SENHA:    ${DB_SENHA}
+      PORTA_API:   ${PORTA_API:-3000}
+      NODE_ENV:    production
+      TZ:          ${TZ:-America/Sao_Paulo}
+
+    depends_on:
+      db:
+        # Nao basta "depends_on: [db]": isso so' espera o container iniciar,
+        # nao o banco ficar pronto. A condicao service_healthy espera o
+        # healthcheck do db passar.
+        condition: service_healthy
+
+    networks:
+      - rede_proximaetapa
+
+    # A porta da API fica publicada apenas para facilitar os testes com curl
+    # durante a avaliacao. O painel nao depende dela: o navegador acessa a API
+    # atraves do proxy do Nginx.
+    ports:
+      - "${PORTA_API_HOST:-3000}:3000"
+
+  # ===========================================================================
+  #  CAMADA DE APRESENTACAO - Nginx servindo o painel administrativo
+  # ===========================================================================
+  web:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    image: proximaetapa/web:1.0
+    container_name: pe_web
+    restart: unless-stopped
+
+    depends_on:
+      - api
+
+    networks:
+      - rede_proximaetapa
+
+    ports:
+      # Unica porta realmente necessaria: o painel abre em
+      # http://localhost:8080
+      - "${PORTA_WEB:-8080}:80"
+
+    environment:
+      TZ: ${TZ:-America/Sao_Paulo}
+
+  # ===========================================================================
+  #  SERVICO AUXILIAR - Backup agendado (evolucao da Entrega 1)
+  # ===========================================================================
+  backup:
+    build:
+      context: ./backup
+      dockerfile: Dockerfile
+    image: proximaetapa/backup:1.0
+    container_name: pe_backup
+    restart: unless-stopped
+
+    environment:
+      DB_HOST:   db
+      DB_PORTA:  5432
+      DB_NOME:     ${DB_NOME}
+      DB_USUARIO:  ${DB_USUARIO}
+      DB_SENHA:    ${DB_SENHA}
+
+      # Configuracao do proprio backup
+      DIR_BACKUPS:    /backups
+      DIR_DADOS:      /dados
+      MAX_COPIAS:     ${MAX_COPIAS:-5}
+      PREFIXO:        ${PREFIXO:-proximaetapa}
+      CRON_AGENDA:    ${CRON_AGENDA:-0 3 * * *}
+      BACKUP_AO_SUBIR: ${BACKUP_AO_SUBIR:-true}
+      TZ:             ${TZ:-America/Sao_Paulo}
+
+    depends_on:
+      db:
+        condition: service_healthy
+
+    volumes:
+      # VOLUME NOMEADO para os pacotes de backup: persistem entre reinicios.
+      - backups_proximaetapa:/backups
+
+      # Arquivos da aplicacao, montados somente para leitura. O container de
+      # backup nao tem motivo para escrever na pasta de dados.
+      - ./dados_app:/dados:ro
+
+    networks:
+      - rede_proximaetapa
+
+# =============================================================================
+#  REDE CUSTOMIZADA
+# -----------------------------------------------------------------------------
+#  Declarar a rede explicitamente (em vez de usar a "default" que o Compose
+#  cria sozinho) deixa a topologia visivel e permite isolar este projeto de
+#  outros que estejam rodando na mesma maquina.
+# =============================================================================
+networks:
+  rede_proximaetapa:
+    driver: bridge
+    name: rede_proximaetapa
+
+# =============================================================================
+#  VOLUMES NOMEADOS
+# -----------------------------------------------------------------------------
+#  dados_postgres        -> arquivos do banco (a persistencia principal)
+#  backups_proximaetapa  -> pacotes .tar.gz gerados pelo servico de backup
+#
+#  Os dois sao gerenciados pelo Docker e ficam fora do ciclo de vida dos
+#  containers: "docker compose down" nao os apaga.
+# =============================================================================
+volumes:
+  dados_postgres:
+    name: pe_dados_postgres
+  backups_proximaetapa:
+    name: pe_backups

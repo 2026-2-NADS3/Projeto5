@@ -1,0 +1,41 @@
+# =============================================================================
+#  .dockerignore - arquivos que NAO entram no contexto de build
+# -----------------------------------------------------------------------------
+#  Isso deixa o build mais rapido (menos bytes enviados ao daemon), a imagem
+#  menor e, acima de tudo, impede que credenciais do .env vazem para dentro
+#  da imagem.
+# =============================================================================
+
+# Dependencias: sao reinstaladas dentro do container pelo "npm ci".
+node_modules
+npm-debug.log*
+
+# Credenciais - NUNCA devem entrar na imagem.
+.env
+.env.*
+!.env.example
+
+# Controle de versao e metadados
+.git
+.gitignore
+.github
+
+# Arquivos de editor e sistema operacional
+.vscode
+.idea
+*.swp
+.DS_Store
+Thumbs.db
+
+# Testes e documentacao (nao sao necessarios em producao)
+test
+tests
+coverage
+*.test.js
+*.md
+
+# Artefatos locais
+logs
+*.log
+backups
+tmp

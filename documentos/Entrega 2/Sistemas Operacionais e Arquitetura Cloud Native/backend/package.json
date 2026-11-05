@@ -1,0 +1,18 @@
+{
+  "name": "proximaetapa-api",
+  "version": "1.0.0",
+  "description": "API do projeto Proxima Etapa - UC Cloud Native Entrega 2",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "node --watch src/server.js"
+  },
+  "dependencies": {
+    "express": "4.21.2",
+    "pg": "8.13.1"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

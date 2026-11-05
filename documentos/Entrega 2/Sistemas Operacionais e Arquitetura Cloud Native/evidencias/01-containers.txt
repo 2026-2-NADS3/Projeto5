@@ -1,0 +1,5 @@
+NAME        IMAGE                     COMMAND                  SERVICE   CREATED          STATUS                    PORTS
+pe_api      proximaetapa/api:1.0      "dumb-init -- node s…"   api       14 minutes ago   Up 4 minutes (healthy)    0.0.0.0:3000->3000/tcp, [::]:3000->3000/tcp
+pe_backup   proximaetapa/backup:1.0   "/usr/local/bin/entr…"   backup    14 minutes ago   Up 3 minutes (healthy)    
+pe_db       postgres:16-alpine        "docker-entrypoint.s…"   db        14 minutes ago   Up 14 minutes (healthy)   5432/tcp
+pe_web      proximaetapa/web:1.0      "/docker-entrypoint.…"   web       14 minutes ago   Up 14 minutes (healthy)   0.0.0.0:8080->80/tcp, [::]:8080->80/tcp
