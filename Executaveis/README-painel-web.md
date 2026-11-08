@@ -23,7 +23,7 @@ Funciona no computador e no celular (Chrome, Edge, Firefox ou Safari atualizados
    | Campo  | Valor |
    |--------|-------|
    | E-mail | `admin@proximaetapa.test` |
-   | Senha  | *(solicite ao grupo)* |
+   | Senha  | *PE-k53O9mYlWAc* |
 
 3. Clique em **Entrar**. Você será levado ao **Dashboard**.
 
