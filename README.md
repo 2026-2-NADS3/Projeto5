@@ -63,14 +63,9 @@ Raiz
 
 ---
 
-## 📲 Instalação
+## 🛠 Instalação
 
-### Requisitos
-
-- Dispositivo Android 8.0 (API 26) ou superior
-- Arquivo APK do aplicativo (disponível em `executáveis/android`)
-
-### Instalando o APK
+<b>Android:</b>
 
 1. Faça o download do arquivo `ProximaEtapa.apk`;
 2. Transfira o APK para o dispositivo Android, caso necessário;
@@ -78,6 +73,18 @@ Raiz
 4. Caso solicitado, habilite a opção **"Instalar aplicativos de fontes desconhecidas"**;
 5. Conclua a instalação;
 6. Abra o aplicativo **Próxima Etapa** e utilize normalmente.
+
+<b>HTML:</b>
+
+Não há instalação!
+Encontre o index.html na pasta executáveis e execute-o como uma página WEB (através de algum browser).
+
+---
+
+### Requisitos
+
+- Dispositivo Android 8.0 (API 26) ou superior
+- Arquivo APK do aplicativo (disponível em `executáveis/android`)
 
 ---
 
@@ -92,8 +99,8 @@ Raiz
 2. Abra o projeto no Android Studio;
 3. Aguarde o download das dependências do Gradle;
 4. Conecte um dispositivo Android ou inicie um emulador;
-5. Entre na pasta documentos -> Entrega1 -> ProgramacaoMobile
-6. Execute o projeto através do botão **Run** ▶️.
+5. Entre na pasta documentos -> Entrega2 -> ProgramacaoMobile
+6. Execute o projeto através do botão **Run** .
 
 
 ## 📋 Licença/License
