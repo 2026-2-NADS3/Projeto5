@@ -1,0 +1,29 @@
+.trilho {
+  width: 100%;
+  height: 10px;
+  overflow: hidden;
+  border-radius: var(--radius-pill);
+  background: var(--color-neutral-bar);
+}
+
+.escuro {
+  background: rgba(255, 255, 255, 0.18);
+}
+
+.barra {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  transition: width 400ms ease;
+}
+
+.verde {
+  background: var(--color-green-500);
+}
+
+.amarelo {
+  background: var(--color-yellow-400);
+}
+
+.roxo {
+  background: var(--color-purple-600);
+}

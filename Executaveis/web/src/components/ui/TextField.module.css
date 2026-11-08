@@ -1,0 +1,31 @@
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.label {
+  padding-left: var(--space-4);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text);
+}
+
+.input {
+  height: 48px;
+  padding: 0 var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-pill);
+  background: var(--color-purple-600);
+  color: var(--color-white);
+  font-size: var(--font-size-md);
+}
+
+.input::placeholder {
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.input:focus-visible {
+  border-color: var(--color-yellow-400);
+  box-shadow: none;
+}

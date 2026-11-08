@@ -1,0 +1,152 @@
+.wrapper {
+  width: 100%;
+  overflow-x: auto;
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card);
+}
+
+.table {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  font-size: var(--font-size-sm);
+}
+
+.table th {
+  padding: var(--space-4) var(--space-4);
+  border-bottom: 1px solid var(--color-border);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  white-space: nowrap;
+}
+
+.table th:first-child,
+.table td:first-child {
+  padding-left: var(--space-5);
+}
+
+.table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--color-page);
+  vertical-align: middle;
+}
+
+.table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover td {
+  background: var(--color-purple-100);
+}
+
+.message {
+  padding: var(--space-6) var(--space-4) !important;
+  text-align: center !important;
+  color: var(--color-text-muted);
+}
+
+/* Celular: cada linha vira um cartão (sem rolagem lateral nem colunas cortadas). */
+@media (max-width: 640px) {
+  .wrapper {
+    overflow-x: visible;
+  }
+
+  .table {
+    min-width: 0;
+  }
+
+  .table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .table tbody,
+  .table tr,
+  .table td {
+    display: block;
+    width: 100%;
+  }
+
+  .table tr {
+    padding: var(--space-3) var(--space-4);
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .table tbody tr:last-child {
+    border-bottom: 0;
+  }
+
+  .table td,
+  .table td:first-child {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-3);
+    padding: var(--space-1) 0;
+    border-bottom: 0;
+    text-align: right !important;
+    overflow-wrap: anywhere;
+  }
+
+  .table td > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .table td::before {
+    content: attr(data-label);
+    flex-shrink: 0;
+    font-size: var(--font-size-xs);
+    font-weight: var(--font-weight-semibold);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: var(--color-text-muted);
+    text-align: left;
+  }
+
+  /* 1ª coluna = título do cartão, sem rótulo */
+  .table td:first-child {
+    display: block;
+    padding-bottom: var(--space-2);
+    text-align: left !important;
+    font-size: var(--font-size-md);
+  }
+
+  .table td:first-child::before {
+    content: none;
+  }
+
+  /* coluna sem cabeçalho (ex.: botão de ação) ocupa a linha toda */
+  .table td[data-label=""] {
+    justify-content: flex-end;
+  }
+
+  .table td[data-label=""]::before {
+    content: none;
+  }
+
+  .message {
+    display: block;
+  }
+
+  .clickable:hover td {
+    background: transparent;
+  }
+
+  .clickable:hover {
+    background: var(--color-purple-100);
+  }
+}

@@ -1,0 +1,66 @@
+.aba {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.resumo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.numero {
+  display: flex;
+  flex-direction: column;
+}
+
+.numero span {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.numero strong {
+  font-size: 1.75rem;
+  color: var(--color-purple-900);
+}
+
+.acaoEncerrar {
+  margin-left: auto;
+}
+
+.secao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.titulo {
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-purple-900);
+}
+
+.aluno {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.aluno span {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.badges {
+  display: inline-flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}

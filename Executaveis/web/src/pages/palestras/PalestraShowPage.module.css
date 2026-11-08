@@ -1,0 +1,116 @@
+.voltar {
+  margin-bottom: var(--space-3);
+  margin-left: calc(var(--space-4) * -1);
+}
+
+.cabecalho {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-5);
+  padding-top: var(--space-2);
+}
+
+.info {
+  flex: 1 1 380px;
+  min-width: 0;
+}
+
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+}
+
+.titulo {
+  margin-top: var(--space-3);
+  font-size: var(--font-size-2xl);
+  font-weight: 800;
+  color: var(--color-purple-900);
+}
+
+.descricao {
+  margin-top: var(--space-2);
+  max-width: 64ch;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-5);
+  margin: var(--space-4) 0 0;
+  padding: 0;
+  list-style: none;
+  font-size: var(--font-size-sm);
+}
+
+.meta li {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.meta svg {
+  color: var(--color-purple-600);
+}
+
+.lateral {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-4);
+}
+
+.numeros {
+  display: flex;
+  gap: var(--space-5);
+  margin: 0;
+}
+
+.numeros div {
+  text-align: right;
+}
+
+.numeros dt {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.numeros dd {
+  margin: var(--space-1) 0 0;
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--color-purple-900);
+}
+
+.numeros dd span {
+  margin-left: var(--space-1);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.numeros .lotada {
+  color: var(--color-danger-fg);
+}
+
+.abas {
+  margin-top: var(--space-6);
+}
+
+@media (max-width: 640px) {
+  .lateral {
+    align-items: flex-start;
+  }
+
+  .numeros div {
+    text-align: left;
+  }
+}

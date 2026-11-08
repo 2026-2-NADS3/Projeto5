@@ -1,0 +1,110 @@
+.aba {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+}
+
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: var(--space-4);
+}
+
+.explicacao {
+  max-width: 64ch;
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+  color: var(--color-text-muted);
+}
+
+.grupos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--space-4);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grupo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-card);
+  background: var(--color-surface);
+  box-shadow: var(--shadow-card);
+}
+
+.grupoTitulo {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  width: 100%;
+  font-family: var(--font-display);
+  font-size: var(--font-size-lg);
+  font-weight: 800;
+  color: var(--color-purple-900);
+}
+
+.grupoTitulo span {
+  font-family: var(--font-family);
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+}
+
+.membros {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.membro {
+  display: grid;
+  grid-template-columns: 28px 1fr auto;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-sm);
+}
+
+.letra {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--color-purple-100);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-purple-900);
+}
+
+.nome {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.mover {
+  height: 28px;
+  padding: 0 var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-pill);
+  background: var(--color-surface);
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.mover:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}

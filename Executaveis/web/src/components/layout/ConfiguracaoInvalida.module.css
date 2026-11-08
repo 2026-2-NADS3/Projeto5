@@ -1,0 +1,10 @@
+.pagina {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: var(--space-7) var(--space-4);
+}
+
+.pagina ul {
+  margin: var(--space-2) 0;
+  padding-left: var(--space-5);
+}

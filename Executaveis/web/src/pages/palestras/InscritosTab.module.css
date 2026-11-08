@@ -1,0 +1,67 @@
+.aba {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+}
+
+.busca {
+  max-width: 360px;
+}
+
+.secao {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.titulo {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--font-size-md);
+  font-weight: var(--font-weight-bold);
+  color: var(--color-purple-900);
+}
+
+.contador {
+  display: inline-grid;
+  place-items: center;
+  min-width: 28px;
+  height: 24px;
+  padding: 0 var(--space-2);
+  border-radius: var(--radius-pill);
+  background: var(--color-purple-100);
+  color: var(--color-purple-600);
+  font-size: var(--font-size-xs);
+}
+
+.explicacao {
+  max-width: 72ch;
+  font-size: var(--font-size-sm);
+  color: var(--color-text-muted);
+}
+
+.posicao {
+  font-weight: var(--font-weight-bold);
+  color: var(--color-purple-600);
+}
+
+.convite {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.expira {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-muted);
+}
+
+.cancelados summary {
+  margin-bottom: var(--space-3);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-muted);
+  cursor: pointer;
+}

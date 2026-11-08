@@ -1,0 +1,18 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.image {
+  display: block;
+  height: auto;
+}
+
+.sm .image {
+  width: 104px;
+}
+
+.lg .image {
+  width: 180px;
+}

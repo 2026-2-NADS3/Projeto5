@@ -1,0 +1,74 @@
+/*
+ * Tokens visuais do painel administrativo.
+ * Valores extraídos do mockup mobile no Figma ("Próxima Etapa — Design System",
+ * página Mockup). Qualquer cor/raio/sombra nova deve entrar aqui, nunca solta
+ * dentro de um componente.
+ */
+:root {
+  /* Marca */
+  --color-purple-900: #480072; /* banner da Home do app — fundo do menu lateral */
+  --color-purple-600: #6f36b1; /* campos do login e convite — ação principal */
+  --color-purple-100: #efe7f8; /* fundo suave para estados ativos/hover */
+  --color-purple-50: #f8f4fc;
+  --color-purple-700: #5b1a93; /* hover sobre o menu */
+  --color-yellow-400: #efc546; /* barra de destaque dos cards */
+  --color-yellow-100: #fcf3d6;
+  --color-green-500: #4cb81a; /* verde do logo */
+
+  /* Feedback (pílulas do app) */
+  --color-success-bg: #c4e5ad;
+  --color-success-fg: #1f4b00;
+  --color-danger-bg: #ebb3b4;
+  --color-danger-fg: #b80009;
+  --color-warning-bg: #fbe9a8; /* "já registrado" no check-in */
+  --color-warning-border: #8a6400;
+  --color-warning-fg: #5c4200;
+
+  /* Neutros */
+  --color-white: #ffffff;
+  --color-text: #1c1a24;
+  --color-text-muted: #5d5a68;
+  --color-border: #d9d9d9;
+  --color-surface: #ffffff;
+  --color-page: #f6f4f9;
+  --color-neutral-bar: #e4e4e4;
+
+  /* Gráficos (uma série por gráfico: roxo da marca, contraste 7:1 sobre o branco) */
+  --color-chart-bar: var(--color-purple-600);
+
+  /* Tipografia: Inter no texto (como no app) e Baloo 2 nos títulos,
+     arredondada como o logo e os títulos do site da Próxima Etapa. */
+  --font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-display: "Baloo 2", "Inter", system-ui, sans-serif;
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-md: 1rem;
+  --font-size-lg: 1.25rem;
+  --font-size-xl: 1.5rem;
+  --font-size-2xl: 2rem;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+
+  /* Espaçamento (escala de 4px) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+  --space-7: 48px;
+
+  /* Forma */
+  --radius-card: 25px; /* cards do app */
+  --radius-pill: 999px; /* botões e campos em pílula */
+  --radius-sm: 12px;
+  --shadow-card: 3px 4px 4px rgba(0, 0, 0, 0.12);
+  --shadow-raised: 3px 4px 4px rgba(0, 0, 0, 0.25);
+
+  /* Layout */
+  --sidebar-width: 248px;
+  --topbar-height: 64px;
+  --focus-ring: 0 0 0 3px rgba(111, 54, 177, 0.35);
+}

@@ -1,0 +1,29 @@
+.alert {
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font-size: var(--font-size-sm);
+  line-height: 1.5;
+}
+
+.title {
+  font-weight: var(--font-weight-bold);
+}
+
+.info {
+  background: var(--color-purple-100);
+  border-color: var(--color-purple-600);
+  color: var(--color-purple-900);
+}
+
+.success {
+  background: var(--color-success-bg);
+  border-color: var(--color-success-fg);
+  color: var(--color-success-fg);
+}
+
+.danger {
+  background: var(--color-danger-bg);
+  border-color: var(--color-danger-fg);
+  color: var(--color-danger-fg);
+}

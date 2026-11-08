@@ -1,0 +1,164 @@
+.sidebar {
+  position: sticky;
+  top: 0;
+  flex: 0 0 var(--sidebar-width);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  padding: var(--space-5) var(--space-4) var(--space-4);
+  background: var(--color-purple-900);
+  color: var(--color-white);
+  border-top-right-radius: var(--radius-card);
+  border-bottom-right-radius: var(--radius-card);
+}
+
+/* Logo como um adesivo colado no menu — o logo da ONG tem cara de adesivo. */
+.brand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  padding-top: var(--space-2);
+}
+
+.sticker {
+  display: inline-flex;
+  padding: var(--space-3) var(--space-4);
+  border-radius: 20px;
+  background: var(--color-white);
+  box-shadow: 0 6px 0 rgba(0, 0, 0, 0.18);
+  transform: rotate(-3deg);
+  transition: transform 200ms ease;
+}
+
+.sticker:hover {
+  transform: rotate(0deg) scale(1.03);
+}
+
+.brandCaption {
+  font-size: var(--font-size-xs);
+  font-weight: var(--font-weight-semibold);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.nav {
+  flex: 1;
+  overflow-y: auto;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  height: 46px;
+  padding: 0 var(--space-4);
+  border-radius: var(--radius-pill);
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: rgba(255, 255, 255, 0.82);
+  transition: background-color 120ms ease, color 120ms ease;
+}
+
+.link:hover {
+  background: var(--color-purple-700);
+  color: var(--color-white);
+}
+
+.active,
+.active:hover {
+  background: var(--color-white);
+  color: var(--color-purple-900);
+}
+
+.active svg {
+  color: var(--color-purple-600);
+}
+
+.usuario {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.avatar {
+  flex: 0 0 auto;
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: var(--color-yellow-400);
+  color: var(--color-purple-900);
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: 1.1rem;
+}
+
+.usuarioTexto {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.usuarioNome {
+  overflow: hidden;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.usuarioPapel {
+  font-size: var(--font-size-xs);
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.sair {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: rgba(255, 255, 255, 0.8);
+  cursor: pointer;
+}
+
+.sair:hover {
+  background: rgba(255, 255, 255, 0.14);
+  color: var(--color-white);
+}
+
+@media (max-width: 900px) {
+  .sidebar {
+    position: fixed;
+    z-index: 40;
+    left: 0;
+    transform: translateX(calc(-100% - 4px));
+    visibility: hidden; /* menu fechado não recebe foco do teclado */
+    transition: transform 200ms ease, visibility 200ms ease;
+  }
+
+  .open {
+    transform: translateX(0);
+    visibility: visible;
+  }
+}
