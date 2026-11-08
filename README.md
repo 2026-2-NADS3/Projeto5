@@ -34,6 +34,7 @@
 - Android SDK
 - ConstraintLayout
 - Figma
+- Supabase/SQL
 
 ---
 
