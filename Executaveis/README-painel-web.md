@@ -7,7 +7,7 @@ Para usar, basta abrir o link no navegador. **Não é preciso clonar o repositó
 
 ---
 
-## 🔗 Link de acesso
+## Link de acesso
 
 ### **https://elegant-sopapillas-04a196.netlify.app**
 
@@ -15,7 +15,7 @@ Funciona no computador e no celular (Chrome, Edge, Firefox ou Safari atualizados
 
 ---
 
-## 🔑 Como entrar
+## Como entrar
 
 1. Abra o link acima.
 2. Na tela **Entrar**, preencha:
@@ -31,7 +31,7 @@ Funciona no computador e no celular (Chrome, Edge, Firefox ou Safari atualizados
 
 ---
 
-## 🧭 O que dá para fazer no painel
+## O que dá para fazer no painel
 
 | Menu | O que a equipe faz |
 |---|---|
@@ -54,7 +54,7 @@ Funciona no computador e no celular (Chrome, Edge, Firefox ou Safari atualizados
 
 ---
 
-## ❓ Problemas comuns
+## Problemas comuns
 
 | O que aparece | O que fazer |
 |---|---|
@@ -65,9 +65,9 @@ Funciona no computador e no celular (Chrome, Edge, Firefox ou Safari atualizados
 
 ---
 
-## 🛠️ Para quem vai desenvolver
+## Para quem vai desenvolver
 
 Instruções para rodar localmente, estrutura do código, banco de dados (Supabase) e testes estão em
 [`admin-web/README.md`](admin-web/README.md).
 
-O site é publicado automaticamente pelo **Netlify** a cada `git push` na branch **`laura-web`**.
+O site é publicado automaticamente pelo **Netlify**
