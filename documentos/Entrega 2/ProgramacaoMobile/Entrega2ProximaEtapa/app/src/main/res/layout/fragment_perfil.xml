@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:paddingBottom="120dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/fundo_amarelo"
+            android:layout_width="0dp"
+            android:layout_height="96dp"
+            android:background="@color/pe_amarelo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txt_avatar"
+            android:layout_width="104dp"
+            android:layout_height="120dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_avatar"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:textColor="@color/pe_roxo_escuro"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="KS" />
+
+        <TextView
+            android:id="@+id/txt_nome"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="14dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="16dp"
+            android:accessibilityHeading="true"
+            android:textAppearance="@style/TextAppearance.PE.CardTitulo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/txt_avatar"
+            app:layout_constraintTop_toBottomOf="@id/fundo_amarelo"
+            tools:text="Ketlin Silva dos Santos" />
+
+        <TextView
+            android:id="@+id/txt_linkedin"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:gravity="center_vertical"
+            android:minHeight="32dp"
+            android:textColor="@color/pe_roxo_titulo"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="@id/txt_nome"
+            app:layout_constraintStart_toStartOf="@id/txt_nome"
+            app:layout_constraintTop_toBottomOf="@id/txt_nome"
+            tools:text="linkedin.com/in/ketlinsilva" />
+
+        <TextView
+            android:id="@+id/badge_1"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:background="@drawable/bg_badge_conquistado"
+            android:gravity="center"
+            android:textColor="@color/pe_ink"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="@id/txt_nome"
+            app:layout_constraintTop_toBottomOf="@id/txt_linkedin"
+            tools:text="PE"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/badge_2"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_badge_conquistado"
+            android:gravity="center"
+            android:textColor="@color/pe_ink"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/badge_1"
+            app:layout_constraintTop_toTopOf="@id/badge_1"
+            tools:text="EF"
+            tools:visibility="visible" />
+
+        <TextView
+            android:id="@+id/badge_3"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginStart="6dp"
+            android:background="@drawable/bg_badge_conquistado"
+            android:gravity="center"
+            android:textColor="@color/pe_ink"
+            android:textSize="11sp"
+            android:visibility="gone"
+            app:layout_constraintStart_toEndOf="@id/badge_2"
+            app:layout_constraintTop_toTopOf="@id/badge_1"
+            tools:text="FT"
+            tools:visibility="visible" />
+
+        <Button
+            android:id="@+id/btn_ver_badges"
+            style="@style/Widget.Material3.Button.TextButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/ver_mais"
+            android:textSize="12sp"
+            app:layout_constraintStart_toEndOf="@id/badge_3"
+            app:layout_constraintTop_toBottomOf="@id/txt_linkedin" />
+
+        <androidx.constraintlayout.widget.Barrier
+            android:id="@+id/barreira_cabecalho"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:barrierDirection="bottom"
+            app:constraint_referenced_ids="txt_avatar,btn_ver_badges" />
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_digital"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            app:cardBackgroundColor="@color/pe_verde_escuro"
+            app:cardCornerRadius="24dp"
+            app:cardElevation="6dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barreira_cabecalho"
+            app:strokeWidth="0dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="18dp">
+
+                <TextView
+                    android:id="@+id/txt_card_marca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/cartao_marca"
+                    android:textColor="@color/pe_verde"
+                    android:textSize="13sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_card_nome"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="12dp"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/img_card_qr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_card_marca"
+                    tools:text="Ketlin Silva dos Santos" />
+
+                <TextView
+                    android:id="@+id/txt_card_matricula"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="13sp"
+                    app:layout_constraintEnd_toEndOf="@id/txt_card_nome"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_card_nome"
+                    tools:text="Matrícula PE-000001" />
+
+                <TextView
+                    android:id="@+id/txt_card_nivel"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/bg_badge_conquistado"
+                    android:drawablePadding="4dp"
+                    android:paddingStart="8dp"
+                    android:paddingTop="3dp"
+                    android:paddingEnd="10dp"
+                    android:paddingBottom="3dp"
+                    android:textColor="@color/pe_ink"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    app:drawableStartCompat="@drawable/ic_estrela"
+                    app:drawableTint="@color/pe_ink"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_card_matricula"
+                    tools:text="Próxima Etapa" />
+
+                <ImageView
+                    android:id="@+id/img_card_qr"
+                    android:layout_width="88dp"
+                    android:layout_height="88dp"
+                    android:background="@drawable/bg_qr_branco"
+                    android:contentDescription="@string/cartao_qr_desc"
+                    android:padding="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txt_card_nome" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/barreira_card"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="txt_card_nivel,img_card_qr" />
+
+                <TextView
+                    android:id="@+id/txt_card_rodape"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/cartao_rodape"
+                    android:textColor="@color/pe_verde_claro"
+                    android:textSize="11sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/barreira_card" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_numeros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_digital">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/txt_titulo_numeros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:accessibilityHeading="true"
+                    android:text="@string/perfil_jornada_numeros"
+                    android:textAppearance="@style/TextAppearance.PE.Secao"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_num_cursos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="12dp"
+                    android:gravity="center"
+                    android:textColor="@color/pe_roxo_titulo"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/txt_num_horas"
+                    app:layout_constraintHorizontal_chainStyle="spread"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_titulo_numeros"
+                    tools:text="6" />
+
+                <TextView
+                    android:id="@+id/txt_num_horas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/pe_roxo_titulo"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toStartOf="@id/txt_num_badges"
+                    app:layout_constraintStart_toEndOf="@id/txt_num_cursos"
+                    app:layout_constraintTop_toTopOf="@id/txt_num_cursos"
+                    tools:text="30h" />
+
+                <TextView
+                    android:id="@+id/txt_num_badges"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:textColor="@color/pe_roxo_titulo"
+                    android:textSize="28sp"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/txt_num_horas"
+                    app:layout_constraintTop_toTopOf="@id/txt_num_cursos"
+                    tools:text="7" />
+
+                <TextView
+                    android:id="@+id/txt_rotulo_cursos"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:importantForAccessibility="no"
+                    android:text="@string/perfil_cursos_concluidos"
+                    android:textAppearance="@style/TextAppearance.PE.Legenda"
+                    app:layout_constraintEnd_toEndOf="@id/txt_num_cursos"
+                    app:layout_constraintStart_toStartOf="@id/txt_num_cursos"
+                    app:layout_constraintTop_toBottomOf="@id/txt_num_cursos" />
+
+                <TextView
+                    android:id="@+id/txt_rotulo_horas"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:importantForAccessibility="no"
+                    android:text="@string/perfil_horas"
+                    android:textAppearance="@style/TextAppearance.PE.Legenda"
+                    app:layout_constraintEnd_toEndOf="@id/txt_num_horas"
+                    app:layout_constraintStart_toStartOf="@id/txt_num_horas"
+                    app:layout_constraintTop_toBottomOf="@id/txt_num_horas" />
+
+                <TextView
+                    android:id="@+id/txt_rotulo_badges"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:importantForAccessibility="no"
+                    android:text="@string/perfil_badges"
+                    android:textAppearance="@style/TextAppearance.PE.Legenda"
+                    app:layout_constraintEnd_toEndOf="@id/txt_num_badges"
+                    app:layout_constraintStart_toStartOf="@id/txt_num_badges"
+                    app:layout_constraintTop_toBottomOf="@id/txt_num_badges" />
+
+                <TextView
+                    android:id="@+id/txt_titulo_barras"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/perfil_grafico_horas"
+                    android:textAppearance="@style/TextAppearance.PE.CardTitulo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_rotulo_cursos" />
+
+                <com.example.proximaetapa.ui.widget.BarChartView
+                    android:id="@+id/grafico_barras"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="8dp"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_titulo_barras" />
+
+                <TextView
+                    android:id="@+id/txt_titulo_rosca"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:text="@string/perfil_grafico_presenca"
+                    android:textAppearance="@style/TextAppearance.PE.CardTitulo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/grafico_barras" />
+
+                <com.example.proximaetapa.ui.widget.DonutChartView
+                    android:id="@+id/grafico_rosca"
+                    android:layout_width="0dp"
+                    android:layout_height="180dp"
+                    android:layout_marginTop="8dp"
+                    android:focusable="true"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_titulo_rosca" />
+
+                <View
+                    android:id="@+id/ponto_presencas"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/bg_ponto_verde"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_leg_presencas"
+                    app:layout_constraintEnd_toStartOf="@id/txt_leg_presencas"
+                    app:layout_constraintHorizontal_chainStyle="packed"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@id/txt_leg_presencas" />
+
+                <TextView
+                    android:id="@+id/txt_leg_presencas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginTop="8dp"
+                    android:textAppearance="@style/TextAppearance.PE.Legenda"
+                    app:layout_constraintEnd_toStartOf="@id/ponto_faltas"
+                    app:layout_constraintStart_toEndOf="@id/ponto_presencas"
+                    app:layout_constraintTop_toBottomOf="@id/grafico_rosca"
+                    tools:text="10 presenças" />
+
+                <View
+                    android:id="@+id/ponto_faltas"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/bg_ponto_coral"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_leg_presencas"
+                    app:layout_constraintEnd_toStartOf="@id/txt_leg_faltas"
+                    app:layout_constraintStart_toEndOf="@id/txt_leg_presencas"
+                    app:layout_constraintTop_toTopOf="@id/txt_leg_presencas" />
+
+                <TextView
+                    android:id="@+id/txt_leg_faltas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textAppearance="@style/TextAppearance.PE.Legenda"
+                    app:layout_constraintEnd_toStartOf="@id/ponto_futuros"
+                    app:layout_constraintStart_toEndOf="@id/ponto_faltas"
+                    app:layout_constraintTop_toTopOf="@id/txt_leg_presencas"
+                    tools:text="1 falta" />
+
+                <View
+                    android:id="@+id/ponto_futuros"
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:layout_marginStart="12dp"
+                    android:background="@drawable/bg_ponto_amarelo"
+                    app:layout_constraintBottom_toBottomOf="@id/txt_leg_presencas"
+                    app:layout_constraintEnd_toStartOf="@id/txt_leg_futuros"
+                    app:layout_constraintStart_toEndOf="@id/txt_leg_faltas"
+                    app:layout_constraintTop_toTopOf="@id/txt_leg_presencas" />
+
+                <TextView
+                    android:id="@+id/txt_leg_futuros"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textAppearance="@style/TextAppearance.PE.Legenda"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/ponto_futuros"
+                    app:layout_constraintTop_toTopOf="@id/txt_leg_presencas"
+                    tools:text="4 futuros" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/card_testes"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/card_numeros">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp">
+
+                <TextView
+                    android:id="@+id/txt_titulo_testes"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:accessibilityHeading="true"
+                    android:text="@string/perfil_testes_titulo"
+                    android:textAppearance="@style/TextAppearance.PE.Secao"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/txt_resultado_testes"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:textAppearance="@style/TextAppearance.PE.Corpo"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_titulo_testes"
+                    tools:text="Perfil comportamental: Influente\nVocacional: Social / Artístico" />
+
+                <Button
+                    android:id="@+id/btn_testes"
+                    style="@style/Widget.PE.Button.Verde"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/ir_para_testes"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_resultado_testes" />
+
+                <TextView
+                    android:id="@+id/txt_titulo_interesses"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:accessibilityHeading="true"
+                    android:text="@string/perfil_interesses"
+                    android:textAppearance="@style/TextAppearance.PE.Secao"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/btn_testes" />
+
+                <com.google.android.material.chip.ChipGroup
+                    android:id="@+id/chips_interesses"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/txt_titulo_interesses" />
+
+                <Button
+                    android:id="@+id/btn_editar_perfil"
+                    style="@style/Widget.Material3.Button.OutlinedButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="6dp"
+                    android:text="@string/menu_editar_perfil"
+                    app:icon="@drawable/ic_editar"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/chips_interesses" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </com.google.android.material.card.MaterialCardView>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.core.widget.NestedScrollView>

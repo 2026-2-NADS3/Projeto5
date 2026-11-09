@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="24dp"
+    android:paddingTop="8dp"
+    android:paddingEnd="24dp">
+
+    <TextView
+        android:id="@+id/rotulo_senha_atual"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:labelFor="@id/edt_senha_atual"
+        android:text="@string/senha_atual"
+        android:textAppearance="@style/TextAppearance.PE.Rotulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/edt_senha_atual"
+        style="@style/Widget.PE.Campo.Claro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:autofillHints="password"
+        android:inputType="textPassword"
+        android:paddingEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rotulo_senha_atual" />
+
+    <ImageButton
+        android:id="@+id/btn_olho_senha_atual"
+        style="@style/Widget.PE.BotaoOlho"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/edt_senha_atual"
+        app:layout_constraintEnd_toEndOf="@id/edt_senha_atual"
+        app:layout_constraintTop_toTopOf="@id/edt_senha_atual"
+        app:tint="@color/pe_texto_sec" />
+
+    <TextView
+        android:id="@+id/rotulo_nova_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:labelFor="@id/edt_nova_senha"
+        android:text="@string/nova_senha"
+        android:textAppearance="@style/TextAppearance.PE.Rotulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_senha_atual" />
+
+    <EditText
+        android:id="@+id/edt_nova_senha"
+        style="@style/Widget.PE.Campo.Claro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:autofillHints="newPassword"
+        android:hint="@string/senha_ajuda"
+        android:inputType="textPassword"
+        android:paddingEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rotulo_nova_senha" />
+
+    <ImageButton
+        android:id="@+id/btn_olho_nova_senha"
+        style="@style/Widget.PE.BotaoOlho"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/edt_nova_senha"
+        app:layout_constraintEnd_toEndOf="@id/edt_nova_senha"
+        app:layout_constraintTop_toTopOf="@id/edt_nova_senha"
+        app:tint="@color/pe_texto_sec" />
+
+    <TextView
+        android:id="@+id/rotulo_confirmar_senha"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:labelFor="@id/edt_confirmar_senha"
+        android:text="@string/campo_confirmacao_senha"
+        android:textAppearance="@style/TextAppearance.PE.Rotulo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/edt_nova_senha" />
+
+    <EditText
+        android:id="@+id/edt_confirmar_senha"
+        style="@style/Widget.PE.Campo.Claro"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:autofillHints="newPassword"
+        android:inputType="textPassword"
+        android:paddingEnd="56dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/rotulo_confirmar_senha" />
+
+    <ImageButton
+        android:id="@+id/btn_olho_confirmar_senha"
+        style="@style/Widget.PE.BotaoOlho"
+        android:layout_marginEnd="4dp"
+        app:layout_constraintBottom_toBottomOf="@id/edt_confirmar_senha"
+        app:layout_constraintEnd_toEndOf="@id/edt_confirmar_senha"
+        app:layout_constraintTop_toTopOf="@id/edt_confirmar_senha"
+        app:tint="@color/pe_texto_sec" />
+</androidx.constraintlayout.widget.ConstraintLayout>

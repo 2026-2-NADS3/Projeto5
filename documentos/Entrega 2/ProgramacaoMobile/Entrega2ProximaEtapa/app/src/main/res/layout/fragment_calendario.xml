@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageButton
+        android:id="@+id/btn_semana_anterior"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/semana_anterior"
+        android:src="@drawable/ic_seta_esquerda"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:tint="@color/pe_texto" />
+
+    <TextView
+        android:id="@+id/txt_semana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:accessibilityLiveRegion="polite"
+        android:textAppearance="@style/TextAppearance.PE.Secao"
+        android:textSize="19sp"
+        app:layout_constraintBottom_toBottomOf="@id/btn_semana_anterior"
+        app:layout_constraintStart_toEndOf="@id/btn_semana_anterior"
+        app:layout_constraintTop_toTopOf="@id/btn_semana_anterior"
+        tools:text="01 - 07 abr" />
+
+    <ImageButton
+        android:id="@+id/btn_proxima_semana"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="@string/proxima_semana"
+        android:src="@drawable/ic_seta_direita"
+        app:layout_constraintBottom_toBottomOf="@id/btn_semana_anterior"
+        app:layout_constraintStart_toEndOf="@id/txt_semana"
+        app:layout_constraintTop_toTopOf="@id/btn_semana_anterior"
+        app:tint="@color/pe_texto" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_hoje"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:textSize="17sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/btn_semana_anterior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/btn_semana_anterior"
+        tools:text="2026" />
+
+    <View
+        android:id="@+id/ponto_inscrito"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="20dp"
+        android:background="@drawable/bg_ponto_roxo"
+        app:layout_constraintBottom_toBottomOf="@id/txt_legenda_inscrito"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/txt_legenda_inscrito" />
+
+    <TextView
+        android:id="@+id/txt_legenda_inscrito"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:text="@string/legenda_inscrito"
+        android:textAppearance="@style/TextAppearance.PE.Legenda"
+        app:layout_constraintStart_toEndOf="@id/ponto_inscrito"
+        app:layout_constraintTop_toBottomOf="@id/btn_semana_anterior" />
+
+    <View
+        android:id="@+id/ponto_externo"
+        android:layout_width="12dp"
+        android:layout_height="12dp"
+        android:layout_marginStart="16dp"
+        android:background="@drawable/bg_ponto_verde"
+        app:layout_constraintBottom_toBottomOf="@id/txt_legenda_inscrito"
+        app:layout_constraintStart_toEndOf="@id/txt_legenda_inscrito"
+        app:layout_constraintTop_toTopOf="@id/txt_legenda_inscrito" />
+
+    <TextView
+        android:id="@+id/txt_legenda_externo"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/legenda_externo"
+        android:textAppearance="@style/TextAppearance.PE.Legenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/ponto_externo"
+        app:layout_constraintTop_toTopOf="@id/txt_legenda_inscrito" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_dias"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="120dp"
+        app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+        app:spanCount="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_legenda_externo"
+        tools:itemCount="7"
+        tools:listitem="@layout/item_dia_agenda" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

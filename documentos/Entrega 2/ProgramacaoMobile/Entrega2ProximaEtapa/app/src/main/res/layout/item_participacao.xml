@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="10dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="14dp">
+
+        <TextView
+            android:id="@+id/txt_titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.PE.CardTitulo"
+            app:layout_constraintEnd_toStartOf="@id/txt_percentual"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Empreendedorismo" />
+
+        <TextView
+            android:id="@+id/txt_percentual"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/pe_roxo_titulo"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="75%" />
+
+        <TextView
+            android:id="@+id/txt_periodo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textAppearance="@style/TextAppearance.PE.Legenda"
+            app:layout_constraintEnd_toEndOf="@id/txt_titulo"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_titulo"
+            tools:text="FECAP · 10/09/2026 a 13/09/2026" />
+
+        <View
+            android:id="@+id/barra_trilho"
+            android:layout_width="0dp"
+            android:layout_height="10dp"
+            android:layout_marginTop="10dp"
+            android:background="@drawable/bg_barra_trilho"
+            android:importantForAccessibility="no"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_periodo" />
+
+        <View
+            android:id="@+id/barra"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="@drawable/bg_barra_verde"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="@id/barra_trilho"
+            app:layout_constraintEnd_toEndOf="@id/barra_trilho"
+            app:layout_constraintHorizontal_bias="0"
+            app:layout_constraintStart_toStartOf="@id/barra_trilho"
+            app:layout_constraintTop_toTopOf="@id/barra_trilho"
+            app:layout_constraintWidth_default="percent"
+            app:layout_constraintWidth_percent="0.75" />
+
+        <TextView
+            android:id="@+id/txt_numeros"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textAppearance="@style/TextAppearance.PE.Corpo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/barra_trilho"
+            tools:text="3 presenças · 1 falta · 0 encontros futuros" />
+
+        <TextView
+            android:id="@+id/txt_certificado"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:drawablePadding="6dp"
+            android:gravity="center_vertical"
+            android:textAppearance="@style/TextAppearance.PE.Legenda"
+            app:drawableStartCompat="@drawable/ic_certificado"
+            app:drawableTint="@color/pe_texto_sec"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/txt_numeros"
+            tools:text="Certificado liberado" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

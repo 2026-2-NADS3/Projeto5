@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pe_fundo">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/txt_avatar"
+        android:layout_width="96dp"
+        android:layout_height="96dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/bg_avatar"
+        android:gravity="center"
+        android:importantForAccessibility="no"
+        android:textColor="@color/pe_roxo_escuro"
+        android:textSize="34sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar"
+        tools:text="KS" />
+
+    <TextView
+        android:id="@+id/txt_nome"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:textAppearance="@style/TextAppearance.PE.Corpo"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/txt_perfil"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/txt_avatar"
+        app:layout_constraintTop_toTopOf="@id/txt_avatar"
+        app:layout_constraintVertical_chainStyle="packed"
+        tools:text="Nome: Ketlin Silva" />
+
+    <TextView
+        android:id="@+id/txt_perfil"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.PE.Corpo"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@id/txt_concluidos"
+        app:layout_constraintEnd_toEndOf="@id/txt_nome"
+        app:layout_constraintStart_toStartOf="@id/txt_nome"
+        app:layout_constraintTop_toBottomOf="@id/txt_nome"
+        tools:text="Perfil: Influente" />
+
+    <TextView
+        android:id="@+id/txt_concluidos"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.PE.Corpo"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/txt_avatar"
+        app:layout_constraintEnd_toEndOf="@id/txt_nome"
+        app:layout_constraintStart_toStartOf="@id/txt_nome"
+        app:layout_constraintTop_toBottomOf="@id/txt_perfil"
+        tools:text="Cursos concluídos: 6" />
+
+    <TextView
+        android:id="@+id/txt_dica"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="20dp"
+        android:text="@string/certificados_dica"
+        android:textAppearance="@style/TextAppearance.PE.Legenda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_avatar" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_certificados"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingStart="12dp"
+        android:paddingEnd="12dp"
+        android:paddingBottom="24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_dica"
+        tools:listitem="@layout/item_certificado" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

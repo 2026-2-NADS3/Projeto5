@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:focusable="true"
+    android:paddingTop="8dp"
+    android:paddingBottom="4dp">
+
+    <TextView
+        android:id="@+id/txt_dimensao"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textAppearance="@style/TextAppearance.PE.Corpo"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="Influente (6)" />
+
+    <View
+        android:id="@+id/barra_trilho"
+        android:layout_width="0dp"
+        android:layout_height="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/bg_barra_trilho"
+        android:importantForAccessibility="no"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/txt_dimensao" />
+
+    <View
+        android:id="@+id/barra"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@drawable/bg_barra_roxa"
+        android:importantForAccessibility="no"
+        app:layout_constraintBottom_toBottomOf="@id/barra_trilho"
+        app:layout_constraintEnd_toEndOf="@id/barra_trilho"
+        app:layout_constraintHorizontal_bias="0"
+        app:layout_constraintStart_toStartOf="@id/barra_trilho"
+        app:layout_constraintTop_toTopOf="@id/barra_trilho"
+        app:layout_constraintWidth_default="percent"
+        app:layout_constraintWidth_percent="0.5" />
+</androidx.constraintlayout.widget.ConstraintLayout>

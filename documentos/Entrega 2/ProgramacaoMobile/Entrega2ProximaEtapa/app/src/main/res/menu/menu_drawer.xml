@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/grupo_principal">
+        <item
+            android:id="@+id/menu_configuracoes"
+            android:icon="@drawable/ic_ajustes"
+            android:title="@string/menu_configuracoes" />
+        <item
+            android:id="@+id/menu_ingressos"
+            android:icon="@drawable/ic_ingresso"
+            android:title="@string/menu_ingressos" />
+        <item
+            android:id="@+id/menu_testes"
+            android:icon="@drawable/ic_teste"
+            android:title="@string/menu_testes" />
+        <item
+            android:id="@+id/menu_certificados"
+            android:icon="@drawable/ic_certificado"
+            android:title="@string/menu_certificados" />
+        <item
+            android:id="@+id/menu_editar_perfil"
+            android:icon="@drawable/ic_editar"
+            android:title="@string/menu_editar_perfil" />
+        <item
+            android:id="@+id/menu_ajuda"
+            android:icon="@drawable/ic_ajuda"
+            android:title="@string/menu_ajuda" />
+    </group>
+    <group android:id="@+id/grupo_sair">
+        <item
+            android:id="@+id/menu_sair"
+            android:icon="@drawable/ic_sair"
+            android:title="@string/menu_sair" />
+    </group>
+</menu>

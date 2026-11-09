@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pe_fundo">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp">
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_frente"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/convite_virar_desc"
+                android:focusable="true"
+                android:minHeight="400dp"
+                app:cardBackgroundColor="@color/pe_roxo"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="6dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:strokeWidth="0dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:minHeight="400dp"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:id="@+id/txt_instituicao_frente"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/white"
+                        android:textSize="22sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="FECAP" />
+
+                    <ImageView
+                        android:id="@+id/img_avatar"
+                        android:layout_width="48dp"
+                        android:layout_height="48dp"
+                        android:layout_marginTop="10dp"
+                        android:background="@drawable/bg_circulo_roxo"
+                        android:contentDescription="@string/avatar_aluno"
+                        android:scaleType="centerCrop"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_instituicao_frente"
+                        tools:src="@drawable/bg_avatar" />
+
+                    <TextView
+                        android:id="@+id/txt_convite_titulo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="12dp"
+                        android:text="@string/convite_especial"
+                        android:textColor="@color/white"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="@id/img_avatar"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/img_avatar"
+                        app:layout_constraintTop_toTopOf="@id/img_avatar" />
+
+                    <TextView
+                        android:id="@+id/txt_convite"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:lineSpacingExtra="3dp"
+                        android:textColor="@color/white"
+                        android:textSize="15sp"
+                        app:layout_constraintBottom_toTopOf="@id/txt_convite_regra"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_avatar"
+                        tools:text="Você, Ketlin, foi selecionada para participar..." />
+
+                    <TextView
+                        android:id="@+id/txt_convite_regra"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="@string/convite_regra"
+                        android:textColor="@color/pe_roxo_hint"
+                        android:textSize="12sp"
+                        app:layout_constraintBottom_toTopOf="@id/txt_convite_toque"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_convite" />
+
+                    <TextView
+                        android:id="@+id/txt_convite_toque"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:drawablePadding="6dp"
+                        android:gravity="center"
+                        android:text="@string/convite_toque_qr"
+                        android:textColor="@color/pe_amarelo_claro"
+                        android:textSize="14sp"
+                        android:textStyle="bold"
+                        app:drawableTint="@color/pe_amarelo_claro"
+                        app:drawableTopCompat="@drawable/ic_qrcode"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_convite_regra" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/card_verso"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:visibility="invisible"
+                app:cardBackgroundColor="@color/white"
+                app:cardCornerRadius="32dp"
+                app:cardElevation="6dp"
+                app:layout_constraintBottom_toBottomOf="@id/card_frente"
+                app:layout_constraintEnd_toEndOf="@id/card_frente"
+                app:layout_constraintStart_toStartOf="@id/card_frente"
+                app:layout_constraintTop_toTopOf="@id/card_frente"
+                app:strokeColor="@color/pe_roxo"
+                app:strokeWidth="4dp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="20dp">
+
+                    <TextView
+                        android:id="@+id/txt_instituicao_verso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textColor="@color/pe_ink"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        tools:text="FECAP" />
+
+                    <TextView
+                        android:id="@+id/txt_aluno_info"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:textColor="@color/pe_ink"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_instituicao_verso"
+                        tools:text="Nome: João Silva\nCPF: XXX.XXX.XXX-XX" />
+
+                    <TextView
+                        android:id="@+id/txt_verso_titulo"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center"
+                        android:textColor="@color/pe_ink"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_aluno_info"
+                        tools:text="Currículo criativo: Workshop" />
+
+                    <TextView
+                        android:id="@+id/txt_verso_quando"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="2dp"
+                        android:gravity="center"
+                        android:textColor="@color/pe_ink"
+                        android:textSize="13sp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_verso_titulo"
+                        tools:text="Encontro: 10/11/2026 · 19:00 às 22:00" />
+
+                    <ImageView
+                        android:id="@+id/img_qr"
+                        android:layout_width="230dp"
+                        android:layout_height="230dp"
+                        android:layout_marginTop="12dp"
+                        android:contentDescription="@string/qr_ingresso_desc"
+                        app:layout_constraintBottom_toTopOf="@id/txt_codigo_ingresso"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/txt_verso_quando" />
+
+                    <TextView
+                        android:id="@+id/txt_qr_estado"
+                        android:layout_width="0dp"
+                        android:layout_height="0dp"
+                        android:accessibilityLiveRegion="polite"
+                        android:gravity="center"
+                        android:padding="12dp"
+                        android:textColor="@color/pe_ink"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:visibility="gone"
+                        app:layout_constraintBottom_toBottomOf="@id/img_qr"
+                        app:layout_constraintEnd_toEndOf="@id/img_qr"
+                        app:layout_constraintStart_toStartOf="@id/img_qr"
+                        app:layout_constraintTop_toTopOf="@id/img_qr"
+                        tools:text="Sincronizando ingresso…" />
+
+                    <TextView
+                        android:id="@+id/txt_codigo_ingresso"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="6dp"
+                        android:letterSpacing="0.15"
+                        android:textColor="@color/pe_ink"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/img_qr"
+                        tools:text="PE-7KQ2MD" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <TextView
+                android:id="@+id/txt_aviso_ingresso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_lembrete"
+                android:padding="12dp"
+                android:text="@string/ingresso_aviso"
+                android:textColor="@color/pe_ink"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/card_frente" />
+
+            <TextView
+                android:id="@+id/txt_janela"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:accessibilityLiveRegion="polite"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.PE.Corpo"
+                app:drawableStartCompat="@drawable/ic_relogio"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_aviso_ingresso"
+                tools:text="Check-in aberto agora (até 23:00)." />
+
+            <TextView
+                android:id="@+id/txt_status_presenca"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:accessibilityLiveRegion="polite"
+                android:background="@drawable/bg_lembrete"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:padding="12dp"
+                android:textColor="@color/pe_ink"
+                android:textSize="14sp"
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/ic_check"
+                app:drawableTint="@color/pe_verde_texto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_janela"
+                tools:text="Presença de hoje confirmada às 19:05. Bom encontro!"
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_participacao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:textAppearance="@style/TextAppearance.PE.Corpo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/txt_status_presenca"
+                tools:text="Participação: 50% (1 de 2 encontros)" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

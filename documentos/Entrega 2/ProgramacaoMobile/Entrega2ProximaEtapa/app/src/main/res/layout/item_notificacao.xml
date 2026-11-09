@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/card"
+    style="@style/Widget.PE.Card.Figma"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginStart="12dp"
+    android:layout_marginEnd="12dp"
+    android:layout_marginBottom="8dp"
+    android:clickable="true"
+    android:focusable="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="104dp">
+
+        <com.google.android.material.imageview.ShapeableImageView
+            android:id="@+id/img_capa"
+            android:layout_width="98dp"
+            android:layout_height="77dp"
+            android:layout_marginStart="9dp"
+            android:importantForAccessibility="no"
+            android:scaleType="centerCrop"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:shapeAppearanceOverlay="@style/ShapeAppearance.PE.FotoCard"
+            tools:src="@drawable/foto_espm" />
+
+        <TextView
+            android:id="@+id/txt_capa"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="center"
+            android:importantForAccessibility="no"
+            android:padding="4dp"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/img_capa"
+            app:layout_constraintEnd_toEndOf="@id/img_capa"
+            app:layout_constraintStart_toStartOf="@id/img_capa"
+            app:layout_constraintTop_toTopOf="@id/img_capa" />
+
+        <TextView
+            android:id="@+id/txt_tipo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="12dp"
+            android:textColor="@color/pe_roxo_titulo"
+            android:textSize="10sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/img_capa"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="VESTIBULAR" />
+
+        <TextView
+            android:id="@+id/txt_data"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:textAppearance="@style/TextAppearance.PE.Legenda"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="@id/txt_tipo"
+            app:layout_constraintEnd_toStartOf="@id/barra_nao_lida"
+            app:layout_constraintTop_toTopOf="@id/txt_tipo"
+            tools:text="12/11" />
+
+        <TextView
+            android:id="@+id/txt_titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="8dp"
+            android:textColor="@color/pe_texto"
+            android:textSize="13sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/barra_nao_lida"
+            app:layout_constraintStart_toStartOf="@id/txt_tipo"
+            app:layout_constraintTop_toBottomOf="@id/txt_tipo"
+            tools:text="Fim das inscrições para o ENEM" />
+
+        <TextView
+            android:id="@+id/txt_mensagem"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/pe_texto"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@id/txt_titulo"
+            app:layout_constraintStart_toStartOf="@id/txt_titulo"
+            app:layout_constraintTop_toBottomOf="@id/txt_titulo"
+            tools:text="Acesse o site do INEP e finalize sua inscrição no vestibular" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btn_acao"
+            style="@style/Widget.PE.Button.Verde.Pequeno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="6dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txt_titulo"
+            app:layout_constraintTop_toBottomOf="@id/txt_mensagem"
+            tools:text="Inscreva-se" />
+
+        <View
+            android:id="@+id/barra_nao_lida"
+            android:layout_width="20dp"
+            android:layout_height="0dp"
+            android:background="@color/pe_amarelo"
+            android:importantForAccessibility="no"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/pe_fundo">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/include_toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@id/fundo_acoes"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="20dp">
+
+            <FrameLayout
+                android:id="@+id/capa"
+                android:layout_width="0dp"
+                android:layout_height="180dp"
+                android:importantForAccessibility="no"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/txt_capa"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:textSize="34sp"
+                    android:textStyle="bold"
+                    tools:text="ESPM" />
+            </FrameLayout>
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guia_inicio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="20dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/guia_fim"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="20dp" />
+
+            <TextView
+                android:id="@+id/txt_tipo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_chip_roxo"
+                android:paddingStart="8dp"
+                android:paddingTop="2dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="2dp"
+                android:textColor="@color/pe_roxo_escuro"
+                android:textSize="11sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/capa"
+                tools:text="PALESTRA" />
+
+            <TextView
+                android:id="@+id/txt_titulo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:accessibilityHeading="true"
+                android:textAppearance="@style/TextAppearance.PE.Titulo"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_tipo"
+                tools:text="Currículo criativo: Workshop" />
+
+            <TextView
+                android:id="@+id/txt_local"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.PE.Corpo"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_local"
+                app:drawableTint="@color/pe_texto"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_titulo"
+                tools:text="ESPM - Vila Mariana, São Paulo" />
+
+            <TextView
+                android:id="@+id/txt_data"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:drawablePadding="8dp"
+                android:gravity="center_vertical"
+                android:textAppearance="@style/TextAppearance.PE.Corpo"
+                android:textStyle="bold"
+                app:drawableStartCompat="@drawable/ic_evento"
+                app:drawableTint="@color/pe_texto"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_local"
+                tools:text="12/11/2026 · 14:00 às 17:00" />
+
+            <com.google.android.material.chip.ChipGroup
+                android:id="@+id/chips_meta"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_data" />
+
+            <TextView
+                android:id="@+id/txt_aviso"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/bg_aviso_coral"
+                android:drawablePadding="8dp"
+                android:padding="12dp"
+                android:textColor="@color/pe_ink"
+                android:textSize="13sp"
+                android:visibility="gone"
+                app:drawableStartCompat="@drawable/ic_info"
+                app:drawableTint="@color/pe_coral_texto"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/chips_meta"
+                tools:text="Só pode se inscrever quem concluiu os testes de perfil."
+                tools:visibility="visible" />
+
+            <TextView
+                android:id="@+id/txt_descricao"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:lineSpacingExtra="4dp"
+                android:textAppearance="@style/TextAppearance.PE.Corpo"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_aviso"
+                tools:text="Descrição completa da palestra..." />
+
+            <TextView
+                android:id="@+id/txt_requisitos_titulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/requisitos"
+                android:textAppearance="@style/TextAppearance.PE.CardTitulo"
+                android:visibility="gone"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_descricao" />
+
+            <TextView
+                android:id="@+id/txt_requisitos"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="4dp"
+                android:textAppearance="@style/TextAppearance.PE.Corpo"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_requisitos_titulo" />
+
+            <TextView
+                android:id="@+id/txt_externo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:text="@string/aviso_link_externo"
+                android:textAppearance="@style/TextAppearance.PE.Legenda"
+                android:visibility="gone"
+                app:layout_constraintEnd_toEndOf="@id/guia_fim"
+                app:layout_constraintStart_toStartOf="@id/guia_inicio"
+                app:layout_constraintTop_toBottomOf="@id/txt_requisitos" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/fundo_acoes"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/pe_fundo"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/espaco_acoes" />
+
+    <Space
+        android:id="@+id/espaco_acoes"
+        android:layout_width="0dp"
+        android:layout_height="12dp"
+        app:layout_constraintBottom_toTopOf="@id/btn_principal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/divisor_acoes"
+        android:layout_width="0dp"
+        android:layout_height="1dp"
+        android:background="@color/pe_borda"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/fundo_acoes" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_principal"
+        style="@style/Widget.PE.Button.Verde"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:minHeight="52dp"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@id/btn_secundario"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_goneMarginBottom="14dp"
+        tools:text="Inscreva-se" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/btn_secundario"
+        style="@style/Widget.Material3.Button.TextButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="8dp"
+        android:text="@string/adicionar_agenda_celular"
+        app:icon="@drawable/ic_calendario"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <com.google.android.material.progressindicator.CircularProgressIndicator
+        android:id="@+id/progresso"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="16dp"
+        android:indeterminate="true"
+        android:visibility="gone"
+        app:indicatorSize="24dp"
+        app:layout_constraintBottom_toBottomOf="@id/toolbar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@id/toolbar" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

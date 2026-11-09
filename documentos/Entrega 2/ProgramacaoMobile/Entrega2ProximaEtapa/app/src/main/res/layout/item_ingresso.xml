@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="12dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="12dp">
+
+        <FrameLayout
+            android:id="@+id/capa"
+            android:layout_width="96dp"
+            android:layout_height="76dp"
+            android:importantForAccessibility="no"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/txt_capa"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:textSize="15sp"
+                android:textStyle="bold"
+                tools:text="ESPM" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/txt_titulo"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="12dp"
+            android:textAppearance="@style/TextAppearance.PE.CardTitulo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/capa"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Currículo criativo: Workshop" />
+
+        <TextView
+            android:id="@+id/txt_quando"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="@style/TextAppearance.PE.Corpo"
+            android:textSize="13sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txt_titulo"
+            app:layout_constraintTop_toBottomOf="@id/txt_titulo"
+            tools:text="12/11/2026 · 14:00 às 17:00" />
+
+        <TextView
+            android:id="@+id/txt_status"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:textAppearance="@style/TextAppearance.PE.Legenda"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/txt_titulo"
+            app:layout_constraintTop_toBottomOf="@id/txt_quando"
+            tools:text="Ingresso PE-7KQ2MD · aguardando envio" />
+
+        <Button
+            android:id="@+id/btn_abrir"
+            style="@style/Widget.PE.Button.Verde"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="6dp"
+            android:text="@string/abrir_convite"
+            app:layout_constraintEnd_toStartOf="@id/btn_cancelar"
+            app:layout_constraintStart_toStartOf="@id/txt_titulo"
+            app:layout_constraintTop_toBottomOf="@id/txt_status" />
+
+        <Button
+            android:id="@+id/btn_cancelar"
+            style="@style/Widget.PE.Button.Coral"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/cancelar"
+            app:layout_constraintBottom_toBottomOf="@id/btn_abrir"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@id/btn_abrir"
+            app:layout_constraintTop_toTopOf="@id/btn_abrir" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
