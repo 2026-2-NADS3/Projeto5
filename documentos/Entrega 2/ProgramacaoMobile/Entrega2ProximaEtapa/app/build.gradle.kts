@@ -1,6 +1,17 @@
+import java.util.Properties
+
 plugins {
     alias(libs.plugins.android.application)
 }
+
+// Le SUPABASE_URL e SUPABASE_KEY do arquivo local.properties (na raiz do projeto)
+val localProps = Properties().apply {
+    val arquivo = rootProject.file("local.properties")
+    if (arquivo.exists()) arquivo.inputStream().use { load(it) }
+}
+val supabaseUrl: String = localProps.getProperty("SUPABASE_URL", "").trim()
+    .let { if (it.isEmpty() || it.endsWith("/")) it else "$it/" } // Retrofit exige a barra no final
+val supabaseKey: String = localProps.getProperty("SUPABASE_KEY", "").trim()
 
 android {
     namespace = "com.example.proximaetapa"
@@ -17,15 +28,15 @@ android {
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 
-        buildConfigField("String", "SUPABASE_URL", "\"https://example.supabase.co\"")
-        buildConfigField("String", "SUPABASE_KEY", "\"placeholder_key\"")
+        buildConfigField("String", "SUPABASE_URL", "\"$supabaseUrl\"")
+        buildConfigField("String", "SUPABASE_KEY", "\"$supabaseKey\"")
     }
 
     buildTypes {
         release {
             optimization {
                 enable = true
-                packageScope = setOf("androidx.**", "kotlin.**", "kotlinx.**")
+                packageScope = setOf("androidx.**")
             }
         }
     }
@@ -40,7 +51,7 @@ android {
 }
 
 dependencies {
-    implementation(libs.activity.ktx)
+    implementation(libs.activity)
     implementation(libs.appcompat)
     implementation(libs.constraintlayout)
     implementation(libs.material)

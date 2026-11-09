@@ -142,6 +142,10 @@ public class AppRepository {
     }
 
     public void login(String email, String senha, Callback<Aluno> cb) {
+        if (ApiClient.supabaseNaoConfigurado()) {
+            erro(cb, ApiClient.MSG_SUPABASE_NAO_CONFIGURADO);
+            return;
+        }
         io.execute(() -> {
             try {
                 Response<Dtos.AuthResponse> r = api.login(new Dtos.LoginRequest(email, senha)).execute();
@@ -152,7 +156,7 @@ public class AppRepository {
                 iniciarSessao(r.body(), cb);
             } catch (IOException e) {
                 sessao.limpar();
-                erro(cb, ApiClient.MSG_SEM_INTERNET);
+                erro(cb, ApiClient.mensagemDeFalha(e));
             }
         });
     }
@@ -187,7 +191,7 @@ public class AppRepository {
                 iniciarSessao(r.body(), cb);
             } catch (IOException e) {
                 sessao.limpar();
-                erro(cb, ApiClient.MSG_SEM_INTERNET);
+                erro(cb, ApiClient.mensagemDeFalha(e));
             }
         });
     }

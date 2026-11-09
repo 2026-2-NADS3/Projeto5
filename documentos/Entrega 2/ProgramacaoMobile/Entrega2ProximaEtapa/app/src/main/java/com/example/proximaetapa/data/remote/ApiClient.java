@@ -213,6 +213,35 @@ public final class ApiClient {
     public static final String MSG_SEM_INTERNET =
             "Sem conexão com a internet. Verifique sua rede e tente de novo.";
 
+    /** true quando o local.properties ainda nao tem URL/chave reais do Supabase. */
+    public static boolean supabaseNaoConfigurado() {
+        String url = BuildConfig.SUPABASE_URL;
+        String key = BuildConfig.SUPABASE_KEY;
+        return url == null || url.isEmpty() || url.contains("COLE-AQUI") || url.contains("example.supabase.co")
+                || key == null || key.isEmpty() || key.startsWith("COLE_AQUI") || key.equals("placeholder_key");
+    }
+
+    public static final String MSG_SUPABASE_NAO_CONFIGURADO =
+            "Supabase não configurado: preencha SUPABASE_URL e SUPABASE_KEY no local.properties e recompile.";
+
+    /** Traduz falhas de rede em mensagens que mostram a causa real. */
+    public static String mensagemDeFalha(IOException e) {
+        android.util.Log.e("ApiClient", "Falha de rede ao chamar o Supabase", e);
+        if (supabaseNaoConfigurado()) return MSG_SUPABASE_NAO_CONFIGURADO;
+        if (e instanceof java.net.UnknownHostException) {
+            return "Não foi possível encontrar o servidor (" + BuildConfig.SUPABASE_URL
+                    + "). Confira a SUPABASE_URL e a internet do aparelho/emulador.";
+        }
+        if (e instanceof javax.net.ssl.SSLException) {
+            return "Falha de segurança (SSL) ao conectar. A rede pode estar bloqueando o Supabase "
+                    + "(ex.: proxy/firewall da instituição).";
+        }
+        if (e instanceof java.net.SocketTimeoutException) {
+            return "O servidor demorou para responder. Tente novamente.";
+        }
+        return MSG_SEM_INTERNET;
+    }
+
     public static final String MSG_LOGIN_INVALIDO = "E-mail ou senha incorretos.";
 
     public static final String MSG_EMAIL_JA_CADASTRADO = "Este e-mail já tem cadastro.";

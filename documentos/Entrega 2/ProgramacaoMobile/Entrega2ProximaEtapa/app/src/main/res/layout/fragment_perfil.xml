@@ -126,125 +126,15 @@
             app:constraint_referenced_ids="txt_avatar,btn_ver_badges" />
 
         <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_digital"
+            android:id="@+id/card_numeros"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="20dp"
             android:layout_marginEnd="16dp"
-            android:clickable="true"
-            android:focusable="true"
-            app:cardBackgroundColor="@color/pe_verde_escuro"
-            app:cardCornerRadius="24dp"
-            app:cardElevation="6dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/barreira_cabecalho"
-            app:strokeWidth="0dp">
-
-            <androidx.constraintlayout.widget.ConstraintLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="18dp">
-
-                <TextView
-                    android:id="@+id/txt_card_marca"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/cartao_marca"
-                    android:textColor="@color/pe_verde"
-                    android:textSize="13sp"
-                    android:textStyle="bold"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent" />
-
-                <TextView
-                    android:id="@+id/txt_card_nome"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:layout_marginEnd="12dp"
-                    android:textColor="@color/white"
-                    android:textSize="19sp"
-                    android:textStyle="bold"
-                    app:layout_constraintEnd_toStartOf="@id/img_card_qr"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_card_marca"
-                    tools:text="Ketlin Silva dos Santos" />
-
-                <TextView
-                    android:id="@+id/txt_card_matricula"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="4dp"
-                    android:textColor="@color/white"
-                    android:textSize="13sp"
-                    app:layout_constraintEnd_toEndOf="@id/txt_card_nome"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_card_nome"
-                    tools:text="Matrícula PE-000001" />
-
-                <TextView
-                    android:id="@+id/txt_card_nivel"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:background="@drawable/bg_badge_conquistado"
-                    android:drawablePadding="4dp"
-                    android:paddingStart="8dp"
-                    android:paddingTop="3dp"
-                    android:paddingEnd="10dp"
-                    android:paddingBottom="3dp"
-                    android:textColor="@color/pe_ink"
-                    android:textSize="12sp"
-                    android:textStyle="bold"
-                    app:drawableStartCompat="@drawable/ic_estrela"
-                    app:drawableTint="@color/pe_ink"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/txt_card_matricula"
-                    tools:text="Próxima Etapa" />
-
-                <ImageView
-                    android:id="@+id/img_card_qr"
-                    android:layout_width="88dp"
-                    android:layout_height="88dp"
-                    android:background="@drawable/bg_qr_branco"
-                    android:contentDescription="@string/cartao_qr_desc"
-                    android:padding="6dp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="@id/txt_card_nome" />
-
-                <androidx.constraintlayout.widget.Barrier
-                    android:id="@+id/barreira_card"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:barrierDirection="bottom"
-                    app:constraint_referenced_ids="txt_card_nivel,img_card_qr" />
-
-                <TextView
-                    android:id="@+id/txt_card_rodape"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="8dp"
-                    android:text="@string/cartao_rodape"
-                    android:textColor="@color/pe_verde_claro"
-                    android:textSize="11sp"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/barreira_card" />
-            </androidx.constraintlayout.widget.ConstraintLayout>
-        </com.google.android.material.card.MaterialCardView>
-
-        <com.google.android.material.card.MaterialCardView
-            android:id="@+id/card_numeros"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/card_digital">
+            app:layout_constraintTop_toBottomOf="@id/barreira_cabecalho">
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"

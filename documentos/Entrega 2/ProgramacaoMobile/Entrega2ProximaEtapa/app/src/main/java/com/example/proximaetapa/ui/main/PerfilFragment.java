@@ -2,13 +2,11 @@ package com.example.proximaetapa.ui.main;
 
 import android.content.ActivityNotFoundException;
 import android.content.Intent;
-import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -44,7 +42,6 @@ import com.example.proximaetapa.ui.testes.TestesActivity;
 import com.example.proximaetapa.ui.widget.BarChartView;
 import com.example.proximaetapa.ui.widget.DonutChartView;
 import com.example.proximaetapa.util.DateUtils;
-import com.example.proximaetapa.util.QrUtils;
 
 public class PerfilFragment extends Fragment {
 
@@ -57,7 +54,6 @@ public class PerfilFragment extends Fragment {
     private List<Badge> badges = new ArrayList<>();
 
     private View raiz;
-    private String qrGerado;
 
     @Nullable
     @Override
@@ -76,7 +72,6 @@ public class PerfilFragment extends Fragment {
         v.findViewById(R.id.btn_editar_perfil).setOnClickListener(x ->
                 startActivity(new Intent(requireContext(), EditarPerfilActivity.class)));
         v.findViewById(R.id.btn_ver_badges).setOnClickListener(x -> mostrarTodosBadges());
-        v.findViewById(R.id.card_digital).setOnClickListener(x -> mostrarQrGrande());
         v.findViewById(R.id.txt_linkedin).setOnClickListener(x -> abrirLinkedin());
 
         repo.aluno().observe(getViewLifecycleOwner(), a -> {
@@ -128,15 +123,6 @@ public class PerfilFragment extends Fragment {
         entrada.totalCertificados = certificados.size();
         badges = BadgeCalculator.calcular(entrada);
         desenharBadges();
-
-        texto(R.id.txt_card_nome, aluno.nome);
-        texto(R.id.txt_card_matricula, getString(R.string.cartao_matricula, aluno.matricula));
-        texto(R.id.txt_card_nivel, BadgeCalculator.nivelJornada(badges));
-        if (!conteudoQrAluno().equals(qrGerado)) {
-            Bitmap qr = QrUtils.gerar(conteudoQrAluno(), 300);
-            if (qr != null) ((ImageView) raiz.findViewById(R.id.img_card_qr)).setImageBitmap(qr);
-            qrGerado = conteudoQrAluno();
-        }
 
         int horas = 0;
         for (Certificado c : certificados) horas += c.cargaHoraria;
@@ -243,23 +229,6 @@ public class PerfilFragment extends Fragment {
                 .show();
     }
 
-    private void mostrarQrGrande() {
-        if (aluno == null) return;
-        ImageView img = new ImageView(requireContext());
-        int pad = (int) (24 * getResources().getDisplayMetrics().density);
-        img.setPadding(pad, pad, pad, pad);
-        img.setAdjustViewBounds(true);
-        img.setContentDescription(getString(R.string.cartao_qr_desc));
-        Bitmap qr = QrUtils.gerar(conteudoQrAluno(), 720);
-        if (qr != null) img.setImageBitmap(qr);
-        new MaterialAlertDialogBuilder(requireContext())
-                .setTitle(aluno.nome)
-                .setMessage(getString(R.string.cartao_matricula, aluno.matricula))
-                .setView(img)
-                .setPositiveButton(R.string.fechar, null)
-                .show();
-    }
-
     private void abrirLinkedin() {
         if (aluno == null || aluno.linkedin == null || aluno.linkedin.trim().isEmpty()) {
             startActivity(new Intent(requireContext(), EditarPerfilActivity.class));
@@ -271,10 +240,6 @@ public class PerfilFragment extends Fragment {
             startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse(url)));
         } catch (ActivityNotFoundException ignored) {
         }
-    }
-
-    private String conteudoQrAluno() {
-        return "PE:ALUNO:" + aluno.matricula;
     }
 
     private Set<String> tiposDeTesteFeitos() {

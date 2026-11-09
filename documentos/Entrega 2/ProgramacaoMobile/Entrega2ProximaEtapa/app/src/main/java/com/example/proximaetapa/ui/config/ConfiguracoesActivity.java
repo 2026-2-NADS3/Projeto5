@@ -11,7 +11,6 @@ import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 import com.google.android.material.materialswitch.MaterialSwitch;
 import com.google.android.material.snackbar.Snackbar;
 
-import com.example.proximaetapa.BuildConfig;
 import com.example.proximaetapa.R;
 import com.example.proximaetapa.data.repository.AppRepository;
 import com.example.proximaetapa.ui.BaseActivity;
@@ -33,7 +32,7 @@ public class ConfiguracoesActivity extends BaseActivity {
         setContentView(R.layout.activity_configuracoes);
         configurarToolbar(R.string.menu_configuracoes);
         repo = AppRepository.get(this);
-        raiz = findViewById(R.id.txt_versao);
+        raiz = findViewById(android.R.id.content);
         txtUltimaSync = findViewById(R.id.txt_ultima_sync);
 
         MaterialSwitch swTema = findViewById(R.id.sw_tema_escuro);
@@ -47,9 +46,6 @@ public class ConfiguracoesActivity extends BaseActivity {
         findViewById(R.id.btn_sincronizar).setOnClickListener(v -> sincronizar());
         findViewById(R.id.btn_alterar_senha).setOnClickListener(v -> alterarSenha());
         findViewById(R.id.btn_apagar_conta).setOnClickListener(v -> apagarConta());
-
-        ((TextView) findViewById(R.id.txt_versao)).setText(getString(R.string.versao,
-                BuildConfig.VERSION_NAME, getString(R.string.modo_api)));
 
         atualizarUltimaSync();
     }

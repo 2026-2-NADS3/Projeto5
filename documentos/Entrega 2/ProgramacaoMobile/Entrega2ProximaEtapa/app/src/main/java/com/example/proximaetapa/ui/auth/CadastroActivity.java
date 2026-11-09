@@ -17,6 +17,7 @@ import com.example.proximaetapa.data.remote.dto.Dtos;
 import com.example.proximaetapa.data.repository.AppRepository;
 import com.example.proximaetapa.ui.perfil.EditarPerfilActivity;
 import com.example.proximaetapa.ui.widget.CampoSenha;
+import com.example.proximaetapa.util.TecladoUtils;
 
 public class CadastroActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class CadastroActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cadastro);
+        TecladoUtils.ajustarAoTeclado(this);
 
         edtNome = findViewById(R.id.edt_nome);
         edtEmail = findViewById(R.id.edt_email);

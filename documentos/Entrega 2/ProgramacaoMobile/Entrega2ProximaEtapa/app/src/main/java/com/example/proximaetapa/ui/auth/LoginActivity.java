@@ -19,6 +19,7 @@ import com.example.proximaetapa.data.repository.AppRepository;
 import com.example.proximaetapa.ui.main.MainActivity;
 import com.example.proximaetapa.ui.widget.CampoSenha;
 import com.example.proximaetapa.util.SessionManager;
+import com.example.proximaetapa.util.TecladoUtils;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -39,6 +40,7 @@ public class LoginActivity extends AppCompatActivity {
         }
 
         setContentView(R.layout.activity_login);
+        TecladoUtils.ajustarAoTeclado(this);
         edtEmail = findViewById(R.id.edt_email);
         edtSenha = findViewById(R.id.edt_senha);
         btnEntrar = findViewById(R.id.btn_entrar);

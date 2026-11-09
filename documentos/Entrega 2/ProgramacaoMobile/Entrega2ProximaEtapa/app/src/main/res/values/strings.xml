@@ -204,10 +204,6 @@
     <string name="cursos_sugeridos">Cursos da Próxima Etapa sugeridos</string>
 
     <string name="perfil_sem_linkedin">Adicionar LinkedIn</string>
-    <string name="cartao_marca">PRÓXIMA ETAPA · CARTÃO DO ALUNO</string>
-    <string name="cartao_matricula">Matrícula %1$s</string>
-    <string name="cartao_rodape">Toque para ampliar o QR Code</string>
-    <string name="cartao_qr_desc">QR Code do cartão do aluno</string>
     <string name="perfil_jornada_numeros">Sua jornada em números</string>
     <string name="perfil_cursos_concluidos">cursos\nconcluídos</string>
     <string name="perfil_horas">horas\ncertificadas</string>
@@ -250,8 +246,6 @@
     <string name="apagar_conta">Apagar minha conta</string>
     <string name="apagar_conta_msg">Sua conta e todos os seus dados serão apagados da Próxima Etapa. Essa ação não pode ser desfeita.</string>
     <string name="config_lgpd">Privacidade (LGPD): o app mostra somente os seus dados, a comunicação com o servidor é protegida e você pode apagar sua conta quando quiser.</string>
-    <string name="versao">Próxima Etapa · versão %1$s · %2$s</string>
-    <string name="modo_api">conectado ao Supabase</string>
 
     <string name="canal_notificacao_nome">Avisos da Próxima Etapa</string>
     <string name="canal_notificacao_desc">Novos cursos, palestras, prazos de vestibular e certificados</string>

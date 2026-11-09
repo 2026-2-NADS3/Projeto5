@@ -13,6 +13,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import com.example.proximaetapa.R;
 import com.example.proximaetapa.data.repository.AppRepository;
+import com.example.proximaetapa.util.TecladoUtils;
 
 public class RecuperarSenhaActivity extends AppCompatActivity {
 
@@ -26,6 +27,7 @@ public class RecuperarSenhaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recuperar_senha);
+        TecladoUtils.ajustarAoTeclado(this);
         edtEmail = findViewById(R.id.edt_email);
         btnEnviar = findViewById(R.id.btn_enviar);
         progresso = findViewById(R.id.progresso);

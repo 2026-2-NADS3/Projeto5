@@ -16,6 +16,7 @@ import com.example.proximaetapa.R;
 import com.example.proximaetapa.data.remote.dto.Dtos;
 import com.example.proximaetapa.data.repository.AppRepository;
 import com.example.proximaetapa.ui.widget.CampoSenha;
+import com.example.proximaetapa.util.TecladoUtils;
 
 public class NovaSenhaActivity extends AppCompatActivity {
 
@@ -30,6 +31,7 @@ public class NovaSenhaActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_nova_senha);
+        TecladoUtils.ajustarAoTeclado(this);
         edtSenha = findViewById(R.id.edt_senha);
         edtConfirmacao = findViewById(R.id.edt_confirmacao);
         btnSalvar = findViewById(R.id.btn_salvar);
