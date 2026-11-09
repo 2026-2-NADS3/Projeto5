@@ -82,6 +82,8 @@ Use o **login para teste** lá de cima, ou toque em **"Cadastrar conta nova"**.
 
 ## Testes automatizados
 
+> Os testes automatizados foram desenvolvidos a pedido da disciplina de **Teste e Qualidade de Software**.
+
 O projeto tem testes de unidade das regras do app: presença, certificados, badges, QR Code do ingresso, testes de perfil e ProxIA.
 
 - **No Android Studio:** clique com o botão direito em `app/src/test/java` → **Run 'Tests in java'**
@@ -117,4 +119,3 @@ O código fica em `app/src/main/java/com/example/proximaetapa/`:
 | **"Não foi possível encontrar o servidor"** | Confira se a `SUPABASE_URL` está certa e se o emulador/celular tem internet. |
 | **"E-mail ou senha incorretos"** | A conexão funcionou. Confira o e-mail e a senha. |
 | Dados desatualizados | **Menu → Configurações → Sincronizar agora**. |
-
