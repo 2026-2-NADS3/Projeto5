@@ -3,7 +3,7 @@
 O painel web da equipe da ONG **Próxima Etapa** está publicado na internet.
 Para usar, basta abrir o link no navegador. **Não é preciso clonar o repositório, instalar Node nem rodar nenhum comando.**
 
-> Projeto Interdisciplinar do 3º semestre de ADS da FECAP (Grupo 1, turma 3NAADS).
+> Projeto Interdisciplinar do 3º semestre de ADS da FECAP (Grupo 5, turma 3NAADS).
 
 ---
 
