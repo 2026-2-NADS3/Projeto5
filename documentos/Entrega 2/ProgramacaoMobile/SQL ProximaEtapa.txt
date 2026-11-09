@@ -1,0 +1,320 @@
+-- WARNING: This schema is for context only and is not meant to be run.
+-- Table order and constraints may not be valid for execution.
+
+CREATE TABLE public.universities (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  logo_url text,
+  description text,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT universities_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.ai_knowledge (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title text NOT NULL,
+  content text NOT NULL,
+  category text,
+  is_active boolean NOT NULL DEFAULT true,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT ai_knowledge_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.ai_settings (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  tone text DEFAULT 'friendly'::text,
+  forbidden_topics ARRAY,
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT ai_settings_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.badges (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  name text NOT NULL,
+  description text,
+  icon text NOT NULL,
+  requirement text NOT NULL,
+  points_required integer DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT badges_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.impact_stats (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  year integer NOT NULL,
+  students_impacted integer NOT NULL DEFAULT 0,
+  schools_reached integer NOT NULL DEFAULT 0,
+  universities_partners integer NOT NULL DEFAULT 0,
+  certificates_issued integer NOT NULL DEFAULT 0,
+  courses_offered integer NOT NULL DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT impact_stats_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.news_posts (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title text NOT NULL,
+  slug text NOT NULL UNIQUE,
+  excerpt text NOT NULL,
+  content text NOT NULL,
+  image_url text,
+  category text NOT NULL DEFAULT 'educacao'::text,
+  tags ARRAY,
+  is_ai_generated boolean NOT NULL DEFAULT false,
+  is_published boolean NOT NULL DEFAULT true,
+  views integer NOT NULL DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  video_url text,
+  gallery_images ARRAY,
+  CONSTRAINT news_posts_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.profiles (
+  id uuid NOT NULL,
+  full_name text NOT NULL,
+  avatar_url text,
+  school text,
+  grade text,
+  school_year text,
+  city text,
+  phone text,
+  points integer NOT NULL DEFAULT 0,
+  level text NOT NULL DEFAULT 'Explorador'::text,
+  courses_completed integer NOT NULL DEFAULT 0,
+  no_shows integer NOT NULL DEFAULT 0,
+  is_blocked boolean NOT NULL DEFAULT false,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT profiles_pkey PRIMARY KEY (id),
+  CONSTRAINT profiles_id_fkey FOREIGN KEY (id) REFERENCES auth.users(id)
+);
+CREATE TABLE public.user_roles (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  role USER-DEFINED NOT NULL,
+  CONSTRAINT user_roles_pkey PRIMARY KEY (id),
+  CONSTRAINT user_roles_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id)
+);
+CREATE TABLE public.courses (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title text NOT NULL,
+  description text,
+  banner_url text,
+  university_id uuid,
+  location text,
+  course_date timestamp with time zone NOT NULL,
+  total_spots integer NOT NULL DEFAULT 30,
+  available_spots integer NOT NULL DEFAULT 30,
+  points_awarded integer NOT NULL DEFAULT 100,
+  has_certificate boolean NOT NULL DEFAULT false,
+  category text,
+  is_active boolean NOT NULL DEFAULT true,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT courses_pkey PRIMARY KEY (id),
+  CONSTRAINT courses_university_id_fkey FOREIGN KEY (university_id) REFERENCES public.universities(id)
+);
+CREATE TABLE public.videos (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  title text NOT NULL,
+  description text,
+  video_url text NOT NULL,
+  thumbnail_url text,
+  category text NOT NULL DEFAULT 'palestra'::text,
+  year integer NOT NULL DEFAULT (EXTRACT(year FROM now()))::integer,
+  university_id uuid,
+  school text,
+  program text,
+  is_podcast boolean NOT NULL DEFAULT false,
+  is_active boolean NOT NULL DEFAULT true,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  updated_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT videos_pkey PRIMARY KEY (id),
+  CONSTRAINT videos_university_id_fkey FOREIGN KEY (university_id) REFERENCES public.universities(id)
+);
+CREATE TABLE public.news_comments (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  post_id uuid NOT NULL,
+  author_name text NOT NULL,
+  school text,
+  content text NOT NULL,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  user_id uuid,
+  CONSTRAINT news_comments_pkey PRIMARY KEY (id),
+  CONSTRAINT news_comments_post_id_fkey FOREIGN KEY (post_id) REFERENCES public.news_posts(id)
+);
+CREATE TABLE public.enrollments (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  course_id uuid NOT NULL,
+  status text NOT NULL DEFAULT 'enrolled'::text CHECK (status = ANY (ARRAY['enrolled'::text, 'attended'::text, 'no_show'::text, 'cancelled'::text])),
+  attended_at timestamp with time zone,
+  points_earned integer DEFAULT 0,
+  created_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT enrollments_pkey PRIMARY KEY (id),
+  CONSTRAINT enrollments_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id),
+  CONSTRAINT enrollments_course_id_fkey FOREIGN KEY (course_id) REFERENCES public.courses(id)
+);
+CREATE TABLE public.certificates (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  course_id uuid,
+  certificate_url text,
+  issued_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT certificates_pkey PRIMARY KEY (id),
+  CONSTRAINT certificates_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id),
+  CONSTRAINT certificates_course_id_fkey FOREIGN KEY (course_id) REFERENCES public.courses(id)
+);
+CREATE TABLE public.user_badges (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  badge_id uuid NOT NULL,
+  earned_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT user_badges_pkey PRIMARY KEY (id),
+  CONSTRAINT user_badges_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id),
+  CONSTRAINT user_badges_badge_id_fkey FOREIGN KEY (badge_id) REFERENCES public.badges(id)
+);
+CREATE TABLE public.test_results (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  user_id uuid NOT NULL,
+  test_type text NOT NULL CHECK (test_type = ANY (ARRAY['vocacional'::text, 'disc'::text, 'bolsas'::text])),
+  result_summary text NOT NULL,
+  result_detail jsonb,
+  completed_at timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT test_results_pkey PRIMARY KEY (id),
+  CONSTRAINT test_results_user_id_fkey FOREIGN KEY (user_id) REFERENCES public.profiles(id)
+);
+CREATE TABLE public.alunos (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  user_id uuid NOT NULL UNIQUE,
+  nome text NOT NULL,
+  email text NOT NULL,
+  matricula text UNIQUE,
+  linkedin text,
+  endereco text,
+  cidade text,
+  escola text,
+  interesses text,
+  criado_em timestamp with time zone NOT NULL DEFAULT now(),
+  telefone text,
+  CONSTRAINT alunos_pkey PRIMARY KEY (id),
+  CONSTRAINT alunos_user_id_fkey FOREIGN KEY (user_id) REFERENCES auth.users(id)
+);
+CREATE TABLE public.eventos (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  titulo text NOT NULL,
+  descricao text,
+  instituicao text,
+  local text,
+  tipo text NOT NULL CHECK (tipo = ANY (ARRAY['CURSO'::text, 'PALESTRA'::text, 'EXTERNO'::text])),
+  categoria text,
+  data_inicio timestamp with time zone NOT NULL,
+  data_fim timestamp with time zone NOT NULL,
+  carga_horaria integer NOT NULL DEFAULT 0,
+  total_encontros integer NOT NULL DEFAULT 1,
+  link_externo text,
+  codigo_checkin text UNIQUE,
+  requer_testes boolean NOT NULL DEFAULT false,
+  criado_em timestamp with time zone NOT NULL DEFAULT now(),
+  vagas integer CHECK (vagas IS NULL OR vagas > 0),
+  lista_encerrada boolean NOT NULL DEFAULT false,
+  CONSTRAINT eventos_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.inscricoes (
+  id text NOT NULL,
+  aluno_id bigint NOT NULL,
+  evento_id bigint NOT NULL,
+  data_inscricao timestamp with time zone NOT NULL DEFAULT now(),
+  status text NOT NULL CHECK (status = ANY (ARRAY['ATIVA'::text, 'CANCELADA'::text])),
+  codigo_ingresso text NOT NULL,
+  CONSTRAINT inscricoes_pkey PRIMARY KEY (id),
+  CONSTRAINT inscricoes_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id),
+  CONSTRAINT inscricoes_evento_id_fkey FOREIGN KEY (evento_id) REFERENCES public.eventos(id)
+);
+CREATE TABLE public.presencas (
+  id text NOT NULL,
+  aluno_id bigint NOT NULL,
+  evento_id bigint NOT NULL,
+  data_encontro date NOT NULL,
+  registrado_em timestamp with time zone NOT NULL DEFAULT now(),
+  origem text NOT NULL CHECK (origem = ANY (ARRAY['QR'::text, 'CODIGO'::text, 'LEITOR'::text])),
+  validado_por uuid,
+  registro_manual boolean NOT NULL DEFAULT false,
+  CONSTRAINT presencas_pkey PRIMARY KEY (id),
+  CONSTRAINT presencas_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id),
+  CONSTRAINT presencas_evento_id_fkey FOREIGN KEY (evento_id) REFERENCES public.eventos(id),
+  CONSTRAINT presencas_validado_por_fkey FOREIGN KEY (validado_por) REFERENCES auth.users(id)
+);
+CREATE TABLE public.certificados (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  aluno_id bigint NOT NULL,
+  evento_id bigint NOT NULL,
+  titulo text NOT NULL,
+  instituicao text,
+  carga_horaria integer NOT NULL DEFAULT 0,
+  data_emissao timestamp with time zone NOT NULL DEFAULT now(),
+  codigo_validacao text NOT NULL UNIQUE,
+  CONSTRAINT certificados_pkey PRIMARY KEY (id),
+  CONSTRAINT certificados_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id),
+  CONSTRAINT certificados_evento_id_fkey FOREIGN KEY (evento_id) REFERENCES public.eventos(id)
+);
+CREATE TABLE public.bolsas (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  nome text NOT NULL,
+  instituicao text,
+  descricao text,
+  requisitos text,
+  duracao text,
+  prazo text,
+  link text,
+  internacional boolean NOT NULL DEFAULT false,
+  destaque boolean NOT NULL DEFAULT false,
+  CONSTRAINT bolsas_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.notificacoes (
+  id bigint GENERATED ALWAYS AS IDENTITY NOT NULL,
+  titulo text NOT NULL,
+  mensagem text,
+  tipo text NOT NULL CHECK (tipo = ANY (ARRAY['PALESTRA'::text, 'EXTERNO'::text, 'CURSO'::text, 'CERTIFICADO'::text, 'AVISO'::text, 'AGENDA'::text])),
+  evento_id bigint,
+  aluno_id bigint,
+  data_publicacao timestamp with time zone NOT NULL DEFAULT now(),
+  expira_em timestamp with time zone,
+  CONSTRAINT notificacoes_pkey PRIMARY KEY (id),
+  CONSTRAINT notificacoes_evento_id_fkey FOREIGN KEY (evento_id) REFERENCES public.eventos(id),
+  CONSTRAINT notificacoes_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id)
+);
+CREATE TABLE public.testes_perfil (
+  id text NOT NULL,
+  ordem integer NOT NULL DEFAULT 0,
+  definicao jsonb NOT NULL,
+  CONSTRAINT testes_perfil_pkey PRIMARY KEY (id)
+);
+CREATE TABLE public.resultados_teste (
+  id text NOT NULL,
+  aluno_id bigint NOT NULL,
+  tipo text NOT NULL,
+  codigo text,
+  perfil text,
+  pontuacoes_json text,
+  data timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT resultados_teste_pkey PRIMARY KEY (id),
+  CONSTRAINT resultados_teste_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id)
+);
+CREATE TABLE public.bloqueios (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  aluno_id bigint NOT NULL,
+  inicio timestamp with time zone NOT NULL DEFAULT now(),
+  fim timestamp with time zone NOT NULL,
+  cancelado boolean NOT NULL DEFAULT false,
+  CONSTRAINT bloqueios_pkey PRIMARY KEY (id),
+  CONSTRAINT bloqueios_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id)
+);
+CREATE TABLE public.faltas (
+  id uuid NOT NULL DEFAULT gen_random_uuid(),
+  aluno_id bigint NOT NULL,
+  evento_id bigint NOT NULL,
+  justificada boolean NOT NULL DEFAULT false,
+  bloqueio_id uuid,
+  criada_em timestamp with time zone NOT NULL DEFAULT now(),
+  CONSTRAINT faltas_pkey PRIMARY KEY (id),
+  CONSTRAINT faltas_aluno_id_fkey FOREIGN KEY (aluno_id) REFERENCES public.alunos(id),
+  CONSTRAINT faltas_evento_id_fkey FOREIGN KEY (evento_id) REFERENCES public.eventos(id),
+  CONSTRAINT faltas_bloqueio_id_fkey FOREIGN KEY (bloqueio_id) REFERENCES public.bloqueios(id)
+);
