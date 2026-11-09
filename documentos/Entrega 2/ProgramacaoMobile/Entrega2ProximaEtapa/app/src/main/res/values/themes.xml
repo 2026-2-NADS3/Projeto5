@@ -1,9 +1,180 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
-    <!-- Base application theme. -->
-    <style name="Base.Theme.Entrega2ProximaEtapa" parent="Theme.Material3.DayNight.NoActionBar">
-        <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.ProximaEtapa" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/pe_roxo</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryContainer">@color/pe_roxo_claro</item>
+        <item name="colorOnPrimaryContainer">@color/pe_roxo_escuro</item>
+        <item name="colorSecondary">@color/pe_verde_texto</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorSecondaryContainer">@color/pe_verde_claro</item>
+        <item name="colorOnSecondaryContainer">@color/pe_ink</item>
+        <item name="colorTertiary">@color/pe_amarelo</item>
+        <item name="colorOnTertiary">@color/pe_ink</item>
+        <item name="colorError">@color/pe_coral_texto</item>
+        <item name="android:colorBackground">@color/pe_fundo</item>
+        <item name="colorSurface">@color/pe_superficie</item>
+        <item name="colorOnSurface">@color/pe_texto</item>
+        <item name="colorOnBackground">@color/pe_texto</item>
+        <item name="colorOnSurfaceVariant">@color/pe_texto_sec</item>
+        <item name="colorOutline">@color/pe_borda</item>
+
+        <item name="android:statusBarColor">@color/pe_fundo</item>
+        <item name="android:windowLightStatusBar">@bool/status_bar_clara</item>
+        <item name="android:navigationBarColor">@color/pe_fundo</item>
+
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="fontFamily">@font/inter</item>
+
+        <item name="materialCardViewStyle">@style/Widget.PE.Card</item>
     </style>
 
-    <style name="Theme.Entrega2ProximaEtapa" parent="Base.Theme.Entrega2ProximaEtapa" />
+    <style name="Widget.PE.Campo" parent="Widget.AppCompat.EditText">
+        <item name="android:background">@drawable/bg_campo_roxo</item>
+        <item name="android:minHeight">48dp</item>
+        <item name="android:paddingStart">27dp</item>
+        <item name="android:paddingEnd">22dp</item>
+        <item name="android:paddingTop">10dp</item>
+        <item name="android:paddingBottom">10dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textColorHint">@color/pe_roxo_hint</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:maxLines">1</item>
+    </style>
+
+    <style name="Widget.PE.Campo.Claro">
+        <item name="android:background">@drawable/bg_campo_claro</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:textColor">@color/pe_texto</item>
+        <item name="android:textColorHint">@color/pe_texto_sec</item>
+    </style>
+
+    <style name="TextAppearance.PE.Rotulo" parent="TextAppearance.Material3.LabelLarge">
+        <item name="android:textColor">@color/pe_roxo_titulo</item>
+        <item name="android:textSize">14sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="Widget.PE.BotaoOlho" parent="">
+        <item name="android:layout_width">48dp</item>
+        <item name="android:layout_height">48dp</item>
+        <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
+        <item name="android:src">@drawable/ic_olho</item>
+        <item name="android:contentDescription">@string/mostrar_senha</item>
+    </style>
+
+    <style name="Widget.PE.Card" parent="Widget.Material3.CardView.Elevated">
+        <item name="cardCornerRadius">20dp</item>
+        <item name="cardElevation">3dp</item>
+        <item name="cardBackgroundColor">@color/pe_superficie</item>
+        <item name="strokeColor">@color/pe_borda</item>
+        <item name="strokeWidth">1dp</item>
+    </style>
+
+    <style name="Widget.PE.Button.Verde" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/pe_verde_botao</item>
+        <item name="android:textColor">@color/pe_verde_botao_texto</item>
+        <item name="strokeColor">@color/pe_verde_botao_texto</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="iconTint">@color/pe_verde_botao_texto</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.PE.Button.Verde.Pequeno">
+        <item name="android:minHeight">36dp</item>
+        <item name="android:minWidth">0dp</item>
+        <item name="android:paddingStart">16dp</item>
+        <item name="android:paddingEnd">16dp</item>
+        <item name="android:paddingTop">0dp</item>
+        <item name="android:paddingBottom">0dp</item>
+        <item name="android:insetTop">4dp</item>
+        <item name="android:insetBottom">4dp</item>
+        <item name="android:textSize">11sp</item>
+    </style>
+
+    <style name="Widget.PE.Card.Figma" parent="Widget.PE.Card">
+        <item name="cardCornerRadius">25dp</item>
+        <item name="cardElevation">4dp</item>
+        <item name="strokeColor">@color/pe_borda_card</item>
+    </style>
+
+    <style name="ShapeAppearance.PE.FotoCard" parent="">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">18dp</item>
+        <item name="cornerSizeBottomLeft">18dp</item>
+        <item name="cornerSizeTopRight">0dp</item>
+        <item name="cornerSizeBottomRight">0dp</item>
+    </style>
+
+    <style name="Widget.PE.Button.Coral" parent="Widget.Material3.Button">
+        <item name="backgroundTint">@color/pe_coral_claro</item>
+        <item name="android:textColor">@color/pe_ink</item>
+        <item name="strokeColor">@color/pe_coral_texto</item>
+        <item name="strokeWidth">1dp</item>
+        <item name="android:textSize">13sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="Widget.PE.Button.Link" parent="Widget.Material3.Button.TextButton">
+        <item name="android:textColor">@color/pe_texto</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:minHeight">40dp</item>
+    </style>
+
+    <style name="TextAppearance.PE.TituloAuth" parent="">
+        <item name="android:textColor">@color/pe_roxo_titulo</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:fontFamily">@font/inter</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="Widget.PE.Button.Principal" parent="Widget.Material3.Button">
+        <item name="android:minHeight">56dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="TextAppearance.PE.Titulo" parent="TextAppearance.Material3.HeadlineSmall">
+        <item name="android:textColor">@color/pe_texto</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="TextAppearance.PE.Secao" parent="TextAppearance.Material3.TitleMedium">
+        <item name="android:textColor">@color/pe_texto</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="TextAppearance.PE.CardTitulo" parent="TextAppearance.Material3.TitleSmall">
+        <item name="android:textColor">@color/pe_texto</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="TextAppearance.PE.Corpo" parent="TextAppearance.Material3.BodyMedium">
+        <item name="android:textColor">@color/pe_texto</item>
+        <item name="android:textSize">14sp</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
+    <style name="TextAppearance.PE.Legenda" parent="TextAppearance.Material3.BodySmall">
+        <item name="android:textColor">@color/pe_texto_sec</item>
+        <item name="android:textSize">12sp</item>
+        <item name="fontFamily">@font/inter</item>
+        <item name="android:fontFamily">@font/inter</item>
+    </style>
+
 </resources>

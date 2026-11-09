@@ -1,46 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">Entrega2ProximaEtapa</string>
-    <string name="action_settings">Settings</string>
-    <!-- Strings used for fragments for navigation -->
-    <string name="first_fragment_label">First Fragment</string>
-    <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
-    <string name="previous">Previous</string>
+    <string name="app_name">Entrega 2</string>
 
-    <string name="lorem_ipsum">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
-        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
-        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
-        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
-        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
-        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
-        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
-        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
-        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
-        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
-        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
-        bibendum, vel congue leo egestas.\n\n
-        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
-        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
-        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
-        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
-        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
-        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
-        est.\n\n
-        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
-        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
-        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
-        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
-        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
-        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
-        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
-        convallis.\n\n
-        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
-        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
-        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
-        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
-        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
-        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
-        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
-    </string>
+    <string name="logo_descricao">Logotipo Próxima Etapa</string>
+    <string name="logo_proxima">PRÓXIMA</string>
+    <string name="logo_etapa">ETAPA</string>
+
+    <string name="ok">OK</string>
+    <string name="cancelar">Cancelar</string>
+    <string name="confirmar">Confirmar</string>
+    <string name="enviar">Enviar</string>
+    <string name="salvar">Salvar</string>
+    <string name="voltar">Voltar</string>
+    <string name="fechar">Fechar</string>
+    <string name="abrir">Abrir</string>
+    <string name="apagar">Apagar</string>
+    <string name="sair">Sair</string>
+    <string name="desfazer">Desfazer</string>
+    <string name="pendente">pendente</string>
+    <string name="ver_mais">Ver mais</string>
+    <string name="concluir">Concluir</string>
+    <string name="proxima">Próxima</string>
+    <string name="sincronizar">Sincronizar dados</string>
+
+    <string name="login_titulo">Login:</string>
+    <string name="cadastro_titulo">Cadastro:</string>
+    <string name="campo_email">E-mail</string>
+    <string name="campo_senha">Senha</string>
+    <string name="campo_nome">Nome completo</string>
+    <string name="campo_confirmacao_senha">Confirmação de senha</string>
+    <string name="campo_linkedin">Link do LinkedIn (opcional)</string>
+    <string name="senha_ajuda">Mínimo de 6 caracteres</string>
+    <string name="mostrar_senha">Mostrar senha</string>
+    <string name="ocultar_senha">Ocultar senha</string>
+    <string name="hint_cad_nome">Nome completo:</string>
+    <string name="hint_cad_email">E-mail:</string>
+    <string name="hint_cad_telefone">Telefone:</string>
+    <string name="hint_cad_senha">Senha:</string>
+    <string name="hint_cad_confirmacao">Confirmação de senha:</string>
+    <string name="recuperacao_titulo">Recuperação de Senha</string>
+    <string name="btn_enviar_link">Enviar link de recuperação</string>
+    <string name="nova_senha_titulo">Nova Senha</string>
+    <string name="campo_confirmacao">Confirmação</string>
+    <string name="btn_salvar_senha">Salvar nova senha</string>
+    <string name="erro_link_recuperacao">Este link de recuperação é inválido ou expirou. Peça um novo em "Esqueci minha senha".</string>
+    <string name="erro_telefone">Digite um telefone válido com DDD, como (11) 91234-5678</string>
+    <string name="hint_nome">Nome e sobrenome</string>
+    <string name="hint_opcional">Opcional</string>
+    <string name="hint_linkedin">linkedin.com/in/seu-nome</string>
+    <string name="rotulo_endereco">Endereço (opcional)</string>
+    <string name="rotulo_cidade">Cidade / bairro (opcional)</string>
+    <string name="rotulo_escola">Escola (opcional)</string>
+    <string name="btn_entrar">Entrar</string>
+    <string name="btn_cadastrar_conta">Cadastrar conta nova</string>
+    <string name="btn_esqueci_senha">Esqueci minha senha</string>
+    <string name="btn_criar_conta">Criar minha conta</string>
+    <string name="btn_ja_tenho_conta">Já tenho uma conta</string>
+    <string name="recuperar_mensagem">Digite o e-mail da sua conta. Vamos enviar as instruções para criar uma nova senha.</string>
+    <string name="erro_email_invalido">Digite um e-mail válido, como nome@email.com</string>
+    <string name="erro_senha_vazia">Digite sua senha</string>
+    <string name="erro_senha_curta">A senha precisa ter pelo menos 6 caracteres</string>
+    <string name="erro_senhas_diferentes">As senhas não são iguais</string>
+    <string name="erro_nome">Digite seu nome e sobrenome</string>
+
+    <string name="nav_notificacoes">Notificações</string>
+    <string name="nav_bolsas">Bolsas</string>
+    <string name="nav_agenda">Calendário</string>
+    <string name="nav_perfil">Perfil</string>
+    <string name="abrir_menu">Abrir menu</string>
+    <string name="abrir_chat">Abrir chat de dúvidas com a ProxIA</string>
+    <string name="saudacao">Olá, %1$s!</string>
+    <string name="aviso_offline">Você está sem internet. Mostrando os dados salvos no celular; o que você fizer será enviado quando a conexão voltar.</string>
+    <string name="proxia_balao">Olá, eu sou a ProxIA e estou aqui para te auxiliar em qualquer dúvida!</string>
+
+    <string name="menu_configuracoes">Configurações</string>
+    <string name="menu_ingressos">Meus ingressos</string>
+    <string name="menu_testes">Testes de perfil</string>
+    <string name="menu_certificados">Meus certificados</string>
+    <string name="menu_editar_perfil">Editar perfil</string>
+    <string name="menu_ajuda">Ajuda</string>
+    <string name="menu_sair">Sair</string>
+    <string name="sessao_expirada">Sua sessão expirou. Entre novamente para continuar.</string>
+    <string name="sair_titulo">Sair da conta?</string>
+    <string name="sair_mensagem">Os dados salvos neste celular serão apagados. Você pode entrar de novo quando quiser.</string>
+
+    <string name="home_slogan">Aprendizado nunca é demais</string>
+    <string name="home_banner_titulo">Seu futuro começa aqui!</string>
+    <string name="home_banner_sub">Descubra habilidades e novas oportunidades para você.</string>
+    <string name="home_esta_chegando">Está chegando…</string>
+    <string name="home_sem_proximo">Nenhum evento na sua agenda</string>
+    <string name="home_sem_proximo_dica">Inscreva-se em uma palestra abaixo e ela aparece aqui.</string>
+    <string name="hoje_horario">Hoje, %1$s</string>
+    <string name="ver_na_agenda">Ver no calendário</string>
+    <string name="home_avisos">Avisos da Próxima Etapa</string>
+    <string name="home_avisos_dica">Arraste um aviso para o lado para apagar.</string>
+    <string name="home_sem_avisos">Você está em dia! Nenhum aviso novo.</string>
+    <string name="home_proximas_etapas">Próximas Etapas do seu aprendizado</string>
+    <string name="notificacao_apagada">Aviso apagado</string>
+    <string name="inscreva_se">Inscreva-se</string>
+    <string name="inscrito_ver">Inscrito ✓ Ver</string>
+    <string name="curso_meta">%1$s · %2$d encontro(s) · %3$dh</string>
+    <string name="curso_meta_participacao">Desde %1$s · %2$d%% de presença (%3$d de %4$d encontros)</string>
+    <string name="filtro_disponiveis">Próximos cursos</string>
+    <string name="filtro_meus_cursos">Meus cursos</string>
+    <string name="sem_cursos_disponiveis">Nenhum curso novo no momento. Avisaremos quando abrir inscrição!</string>
+    <string name="sem_meus_cursos">Você ainda não se inscreveu em nenhum curso. Escolha um em \"Próximos cursos\".</string>
+
+    <string name="bolsas_chip">Intercâmbios e bolsas</string>
+    <string name="bolsas_titulo">O mundo te espera!</string>
+    <string name="bolsas_sub">Conheça oportunidades reais para estudar e explorar o mundo.</string>
+    <string name="bolsas_destaque">Bolsas em destaque</string>
+    <string name="bolsas_internacionais">Bolsas internacionais</string>
+    <string name="bolsas_vazio">Nenhuma bolsa disponível agora. Puxe os dados no botão de sincronizar.</string>
+    <string name="detalhe_bolsa">Detalhes da bolsa</string>
+    <string name="requisitos">Requisitos</string>
+    <string name="prazo">Prazo: %1$s</string>
+
+    <string name="semana_anterior">Semana anterior</string>
+    <string name="proxima_semana">Próxima semana</string>
+    <string name="voltar_para_hoje">Voltar para a semana atual</string>
+    <string name="legenda_inscrito">Inscrito(a)</string>
+    <string name="legenda_externo">Vestibulares e eventos externos</string>
+
+    <string name="detalhe_evento">Detalhes</string>
+    <string name="meta_carga">%1$dh de carga horária</string>
+    <string name="meta_participacao">Sua participação: %1$d%% (%2$d de %3$d)</string>
+    <string name="acessar_site_oficial">Acessar site oficial</string>
+    <string name="aviso_link_externo">A inscrição acontece no site oficial, fora do app.</string>
+    <string name="ver_convite">Ver meu convite (QR Code)</string>
+    <string name="evento_encerrado">Evento encerrado</string>
+    <string name="aviso_requer_testes">Este curso só aceita inscrição de quem concluiu os dois testes de perfil.</string>
+    <string name="fazer_testes_perfil">Fazer os testes de perfil</string>
+    <string name="adicionar_agenda_celular">Adicionar à agenda do celular</string>
+    <string name="confirmar_inscricao_titulo">Inscrever-se em \"%1$s\"?</string>
+    <string name="confirmar_inscricao_msg">Você vai receber um convite com QR Code para entrar no evento.\n\nAtenção: aceitar o convite e não comparecer suspende novas inscrições por 3 meses. Se não puder ir, cancele em Meus ingressos até 72h antes.</string>
+    <string name="sem_app_agenda">Nenhum app de agenda encontrado no celular.</string>
+    <string name="sem_navegador">Nenhum navegador encontrado no celular.</string>
+
+    <string name="convite_titulo">Meu ingresso</string>
+    <string name="convite_especial">CONVITE ESPECIAL</string>
+    <string name="convite_texto">Você, %1$s, foi selecionado(a) para participar com a gente de \"%2$s\", que vai acontecer em %3$s (%4$s).\n\nToque no convite para ver o seu QR Code de entrada e apresente na entrada de cada encontro. Aguardamos você lá!</string>
+    <string name="convite_regra">*Resgatar o QR Code e não comparecer resulta na impossibilidade de participar dos próximos 3 eventos da Próxima Etapa.</string>
+    <string name="convite_toque_qr">Toque para ver seu QR Code</string>
+    <string name="convite_virar_desc">Convite. Toque duas vezes para virar e ver o QR Code.</string>
+    <string name="qr_ingresso_desc">QR Code do seu ingresso</string>
+    <string name="ingresso_aviso">Apresente este QR Code na entrada. O check-in é liberado 1h antes do início e vai até 1h depois do fim do encontro.</string>
+    <string name="ingresso_indisponivel">Ingresso indisponível</string>
+    <string name="ingresso_sincronizando">Sincronizando ingresso…</string>
+    <string name="ingresso_sincronizando_dica">O QR Code aparece assim que a Próxima Etapa confirmar sua inscrição (precisa de internet).</string>
+    <string name="ingresso_encontro">Encontro: %1$s</string>
+    <string name="checkin_no_horario">Check-in aberto agora (até %1$s).</string>
+    <string name="checkin_antes">Hoje tem encontro. O check-in abre às %1$s.</string>
+    <string name="checkin_encerrado">O check-in de hoje já encerrou (fechou às %1$s).</string>
+    <string name="checkin_fora">Hoje não há encontro deste evento.</string>
+    <string name="checkin_externo">Evento externo: não há check-in da Próxima Etapa.</string>
+    <string name="presenca_confirmada_em">%1$s · confirmada na entrada</string>
+    <string name="presenca_hoje_confirmada">Presença de hoje confirmada às %1$s. Bom encontro!</string>
+    <string name="participacao_evento">Participação: %1$d%% (%2$d de %3$d encontros)</string>
+
+    <string name="lembrete_ingressos">Lembrete: caso você aceite o convite e não compareça no dia do evento, ficará suspenso(a) das atividades durante 3 meses. Se não puder comparecer, cancele sua inscrição até 72h antes do evento.</string>
+    <string name="seus_ingressos">Seus ingressos</string>
+    <string name="sem_ingressos">Você ainda não tem ingressos para os próximos eventos.</string>
+    <string name="abrir_convite">Abrir convite</string>
+    <string name="participacao_cursos">Participação nos cursos</string>
+    <string name="participacao_cursos_dica">Presenças e faltas de cada curso em que você se inscreveu. Falta só conta depois que o encontro passa.</string>
+    <string name="sem_participacao">Quando você se inscrever em um curso, sua participação aparece aqui.</string>
+    <string name="part_certificado_ok">Certificado liberado: veja em Meus certificados</string>
+    <string name="part_certificado_em_breve">Presença mínima atingida: o certificado sai ao fim do curso</string>
+    <string name="part_comeca_em">Começa em %1$s</string>
+    <string name="historico_presenca">Histórico de presença</string>
+    <string name="cancelar_inscricao">Cancelar inscrição</string>
+    <string name="cancelar_inscricao_titulo">Cancelar inscrição?</string>
+    <string name="cancelar_inscricao_msg">Sua vaga em \"%1$s\" será liberada para outro estudante.</string>
+
+    <string name="cert_nome">Nome: %1$s</string>
+    <string name="cert_perfil">Perfil: %1$s</string>
+    <string name="cert_faca_teste">faça o teste</string>
+    <string name="cert_concluidos">Cursos concluídos: %1$d</string>
+    <string name="certificados_dica">Cursos em verde já têm certificado: toque para visualizar ou baixar. Os demais mostram o que falta para liberar.</string>
+    <string name="cert_bloqueado">O certificado é liberado com pelo menos %1$d%% de presença.\n\nVocê tem %2$d de %3$d encontros. Faltam %4$d presença(s).</string>
+    <string name="cert_info">Instituição: %1$s\nCarga horária: %2$dh\nEmitido em: %3$s\nCódigo de validação: %4$s</string>
+    <string name="visualizar">Visualizar</string>
+    <string name="baixar">Baixar</string>
+    <string name="compartilhar">Compartilhar</string>
+    <string name="cert_baixado">Certificado salvo em Downloads/ProximaEtapa</string>
+    <string name="cert_erro_pdf">Não foi possível gerar o PDF. Tente novamente.</string>
+    <string name="sem_leitor_pdf">Instale um leitor de PDF para abrir o certificado.</string>
+
+    <string name="testes_titulo">Teste de Perfil</string>
+    <string name="inicie_seu_teste">Inicie seu teste</string>
+    <string name="teste_sub">%1$s · ~%2$d minutos</string>
+    <string name="iniciar_teste">Iniciar teste</string>
+    <string name="refazer_teste">Refazer</string>
+    <string name="ver_resultado">Ver resultado</string>
+    <string name="seu_resultado">Seu resultado: %1$s</string>
+    <string name="testes_aviso_orientacao">Os testes de perfil servem para orientação educacional e profissional. Eles não são um diagnóstico psicológico ou clínico.</string>
+    <string name="pergunta_x_de_y">Pergunta %1$d de %2$d</string>
+    <string name="escolha_uma_opcao">Escolha uma opção para continuar</string>
+    <string name="resultado_titulo">Seu resultado</string>
+    <string name="resultado_disc">Seu perfil comportamental</string>
+    <string name="resultado_riasec">Áreas que combinam com você</string>
+    <string name="sua_pontuacao">Sua pontuação</string>
+    <string name="cursos_sugeridos">Cursos da Próxima Etapa sugeridos</string>
+
+    <string name="perfil_sem_linkedin">Adicionar LinkedIn</string>
+    <string name="cartao_marca">PRÓXIMA ETAPA · CARTÃO DO ALUNO</string>
+    <string name="cartao_matricula">Matrícula %1$s</string>
+    <string name="cartao_rodape">Toque para ampliar o QR Code</string>
+    <string name="cartao_qr_desc">QR Code do cartão do aluno</string>
+    <string name="perfil_jornada_numeros">Sua jornada em números</string>
+    <string name="perfil_cursos_concluidos">cursos\nconcluídos</string>
+    <string name="perfil_horas">horas\ncertificadas</string>
+    <string name="perfil_badges">badges\nconquistados</string>
+    <string name="perfil_grafico_horas">Horas certificadas por instituição</string>
+    <string name="perfil_grafico_presenca">Presenças nos eventos inscritos</string>
+    <string name="perfil_testes_titulo">Testes de perfil</string>
+    <string name="perfil_sem_testes">Você ainda não fez os testes. Eles ajudam a escolher cursos e liberam o curso de Soft skills.</string>
+    <string name="perfil_disc">Perfil comportamental: %1$s</string>
+    <string name="perfil_riasec">Vocacional: %1$s</string>
+    <string name="ir_para_testes">Ir para os testes</string>
+    <string name="perfil_interesses">Seus interesses</string>
+    <string name="perfil_sem_interesses">Nenhum interesse escolhido</string>
+    <string name="badges_titulo">Badges: %1$d de %2$d</string>
+
+    <string name="onboarding_titulo">Conte sobre você</string>
+    <string name="onboarding_msg">Bem-vindo(a)! Escolha seus interesses para receber avisos que combinam com você. Você pode pular e fazer isso depois.</string>
+    <string name="seus_interesses">Seus interesses</string>
+    <string name="seus_interesses_dica">Usamos para personalizar avisos de palestras, cursos e bolsas.</string>
+    <string name="dados_pessoais">Dados pessoais</string>
+    <string name="dados_demograficos_dica">Os dados abaixo ficam só no seu perfil e não aparecem no cartão do aluno.</string>
+    <string name="pular_por_enquanto">Pular por enquanto</string>
+    <string name="perfil_salvo">Perfil atualizado!</string>
+
+    <string name="proxia">ProxIA</string>
+    <string name="chat_hint">Digite sua pergunta aqui…</string>
+
+    <string name="config_aparencia">Aparência</string>
+    <string name="config_tema_escuro">Tema escuro</string>
+    <string name="config_notificacoes">Notificações</string>
+    <string name="config_receber_notificacoes">Receber avisos de cursos, palestras e certificados</string>
+    <string name="config_sincronizacao">Sincronização</string>
+    <string name="sincronizar_agora">Sincronizar agora</string>
+    <string name="ultima_sync">Última sincronização: %1$s</string>
+    <string name="nunca_sincronizado">Ainda não sincronizado</string>
+    <string name="config_seguranca">Conta e segurança</string>
+    <string name="alterar_senha">Alterar senha</string>
+    <string name="senha_atual">Senha atual</string>
+    <string name="nova_senha">Nova senha</string>
+    <string name="apagar_conta">Apagar minha conta</string>
+    <string name="apagar_conta_msg">Sua conta e todos os seus dados serão apagados da Próxima Etapa. Essa ação não pode ser desfeita.</string>
+    <string name="config_lgpd">Privacidade (LGPD): o app mostra somente os seus dados, a comunicação com o servidor é protegida e você pode apagar sua conta quando quiser.</string>
+    <string name="versao">Próxima Etapa · versão %1$s · %2$s</string>
+    <string name="modo_api">conectado ao Supabase</string>
+
+    <string name="canal_notificacao_nome">Avisos da Próxima Etapa</string>
+    <string name="canal_notificacao_desc">Novos cursos, palestras, prazos de vestibular e certificados</string>
+
+    <plurals name="encontros">
+        <item quantity="one">%d encontro</item>
+        <item quantity="other">%d encontros</item>
+        <item quantity="many">%d encontros</item>
+    </plurals>
+    <plurals name="presencas">
+        <item quantity="one">%d presença</item>
+        <item quantity="other">%d presenças</item>
+        <item quantity="many">%d presenças</item>
+    </plurals>
+    <plurals name="faltas">
+        <item quantity="one">%d falta</item>
+        <item quantity="other">%d faltas</item>
+        <item quantity="many">%d faltas</item>
+    </plurals>
+    <plurals name="futuros">
+        <item quantity="one">%d futuro</item>
+        <item quantity="other">%d futuros</item>
+        <item quantity="many">%d futuros</item>
+    </plurals>
+    <plurals name="presencas_registradas">
+        <item quantity="one">%d presença registrada</item>
+        <item quantity="other">%d presenças registradas</item>
+        <item quantity="many">%d presenças registradas</item>
+    </plurals>
+
+    <plurals name="encontros_futuros">
+        <item quantity="one">%d encontro futuro</item>
+        <item quantity="many">%d encontros futuros</item>
+        <item quantity="other">%d encontros futuros</item>
+    </plurals>
+    <plurals name="part_faltam">
+        <item quantity="one">Falta %d presença para liberar o certificado</item>
+        <item quantity="many">Faltam %d presenças para liberar o certificado</item>
+        <item quantity="other">Faltam %d presenças para liberar o certificado</item>
+    </plurals>
+
+    <string-array name="interesses">
+        <item>Vestibular</item>
+        <item>Bolsas de estudo</item>
+        <item>Intercâmbio</item>
+        <item>Tecnologia</item>
+        <item>Comunicação</item>
+        <item>Empreendedorismo</item>
+        <item>Saúde</item>
+        <item>Direito</item>
+        <item>Finanças</item>
+        <item>Primeiro emprego</item>
+    </string-array>
+
+    <string-array name="chat_sugestoes">
+        <item>Como registro minha presença?</item>
+        <item>Quando sai meu certificado?</item>
+        <item>Como funcionam as bolsas?</item>
+        <item>Posso cancelar uma inscrição?</item>
+        <item>O que são os testes de perfil?</item>
+    </string-array>
+    <string name="avatar_aluno">Avatar do aluno</string>
 </resources>

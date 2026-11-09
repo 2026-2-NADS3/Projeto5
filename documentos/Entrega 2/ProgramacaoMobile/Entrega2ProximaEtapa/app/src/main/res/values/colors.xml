@@ -1,5 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="pe_roxo">#6F2FB2</color>
+    <color name="pe_roxo_vivo">#7730E2</color>
+    <color name="pe_roxo_escuro">#4A1080</color>
+    <color name="pe_roxo_claro">#EADDFF</color>
+    <color name="pe_roxo_hint">#E5D6FA</color>
+
+    <color name="pe_verde">#51C600</color>
+    <color name="pe_verde_texto">#16803C</color>
+    <color name="pe_verde_claro">#D4F0C0</color>
+    <color name="pe_verde_escuro">#1F4D0A</color>
+    <color name="pe_verde_botao">#C4E5AD</color>
+    <color name="pe_verde_botao_texto">#1F4B00</color>
+    <color name="pe_cinza_barra">#E4E4E4</color>
+    <color name="pe_borda_card">#D9D9D9</color>
+
+    <color name="pe_amarelo">#F2C744</color>
+    <color name="pe_amarelo_claro">#FBDE89</color>
+    <color name="pe_creme">#FFF8E6</color>
+    <color name="pe_coral">#F16161</color>
+    <color name="pe_coral_texto">#C93C3C</color>
+    <color name="pe_coral_claro">#F9D0D0</color>
+
+    <color name="pe_ink">#2C293D</color>
+    <color name="white">#FFFFFF</color>
+
+    <color name="pe_fundo">#FFFFFF</color>
+    <color name="pe_superficie">#FFFFFF</color>
+    <color name="pe_superficie_alt">#F7F8F5</color>
+    <color name="pe_texto">#2C293D</color>
+    <color name="pe_texto_sec">#5B5770</color>
+    <color name="pe_borda">#E4E2EA</color>
+    <color name="pe_roxo_titulo">#6F2FB2</color>
+    <color name="pe_icone_nav">#6F2FB2</color>
 </resources>

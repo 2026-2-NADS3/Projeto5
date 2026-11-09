@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="pe_fundo">#16141F</color>
+    <color name="pe_superficie">#221F2E</color>
+    <color name="pe_superficie_alt">#2C293D</color>
+    <color name="pe_texto">#F2F0F7</color>
+    <color name="pe_texto_sec">#C9C5D6</color>
+    <color name="pe_borda">#3B3750</color>
+    <color name="pe_roxo_titulo">#C9A7FF</color>
+    <color name="pe_icone_nav">#C9A7FF</color>
+    <color name="pe_creme">#1E1B29</color>
+</resources>

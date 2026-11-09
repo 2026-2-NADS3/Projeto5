@@ -1,0 +1,150 @@
+[
+  {
+    "id": "DISC",
+    "titulo": "Perfil Comportamental",
+    "subtitulo": "Análise DISC",
+    "duracaoMinutos": 10,
+    "instrucao": "Escolha a opção que mais combina com você. Não existe resposta certa ou errada.",
+    "perguntas": [
+      { "texto": "Em um trabalho em grupo, você costuma...",
+        "alternativas": [
+          { "texto": "Tomar a frente e dividir as tarefas", "dimensao": "D", "pontos": 1 },
+          { "texto": "Animar o grupo e trazer ideias", "dimensao": "I", "pontos": 1 },
+          { "texto": "Ajudar quem está com dificuldade", "dimensao": "S", "pontos": 1 },
+          { "texto": "Revisar tudo para não ter erros", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "Diante de um problema difícil, você...",
+        "alternativas": [
+          { "texto": "Decide rápido e parte para a ação", "dimensao": "D", "pontos": 1 },
+          { "texto": "Conversa com várias pessoas para buscar saídas", "dimensao": "I", "pontos": 1 },
+          { "texto": "Mantém a calma e segue com paciência", "dimensao": "S", "pontos": 1 },
+          { "texto": "Pesquisa e analisa antes de decidir", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "Os amigos dizem que você é...",
+        "alternativas": [
+          { "texto": "Determinado(a)", "dimensao": "D", "pontos": 1 },
+          { "texto": "Comunicativo(a)", "dimensao": "I", "pontos": 1 },
+          { "texto": "Leal e acolhedor(a)", "dimensao": "S", "pontos": 1 },
+          { "texto": "Organizado(a) e detalhista", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "O que mais te motiva?",
+        "alternativas": [
+          { "texto": "Desafios e resultados", "dimensao": "D", "pontos": 1 },
+          { "texto": "Reconhecimento e novas pessoas", "dimensao": "I", "pontos": 1 },
+          { "texto": "Segurança e um bom ambiente", "dimensao": "S", "pontos": 1 },
+          { "texto": "Fazer as coisas do jeito certo", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "Quando algo muda de última hora, você...",
+        "alternativas": [
+          { "texto": "Se adapta e já define o novo plano", "dimensao": "D", "pontos": 1 },
+          { "texto": "Vê como uma oportunidade nova", "dimensao": "I", "pontos": 1 },
+          { "texto": "Prefere entender com calma antes de mudar", "dimensao": "S", "pontos": 1 },
+          { "texto": "Quer saber os motivos e os detalhes", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "Em uma apresentação, você se sente melhor...",
+        "alternativas": [
+          { "texto": "Defendendo uma posição com firmeza", "dimensao": "D", "pontos": 1 },
+          { "texto": "Contando histórias e interagindo", "dimensao": "I", "pontos": 1 },
+          { "texto": "Apresentando junto com a equipe", "dimensao": "S", "pontos": 1 },
+          { "texto": "Mostrando dados e fatos", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "Seu jeito de estudar é...",
+        "alternativas": [
+          { "texto": "Metas claras e foco no que importa", "dimensao": "D", "pontos": 1 },
+          { "texto": "Em grupo, trocando ideias", "dimensao": "I", "pontos": 1 },
+          { "texto": "Com rotina fixa, todo dia um pouco", "dimensao": "S", "pontos": 1 },
+          { "texto": "Com resumos e cronograma detalhado", "dimensao": "C", "pontos": 1 } ] },
+      { "texto": "Se um colega discorda de você, você...",
+        "alternativas": [
+          { "texto": "Argumenta até chegar a uma decisão", "dimensao": "D", "pontos": 1 },
+          { "texto": "Tenta convencer com bom humor", "dimensao": "I", "pontos": 1 },
+          { "texto": "Busca um acordo bom para os dois", "dimensao": "S", "pontos": 1 },
+          { "texto": "Pede evidências para comparar", "dimensao": "C", "pontos": 1 } ] }
+    ],
+    "perfis": {
+      "D": { "nome": "Executor",
+        "descricao": "Você gosta de desafios, toma decisões com rapidez e busca resultados. Pode crescer ainda mais exercitando a escuta e a paciência com o ritmo dos outros.",
+        "sugestoes": ["Liderança", "Empreendedorismo", "Simulação da ONU"] },
+      "I": { "nome": "Influente",
+        "descricao": "Você se comunica com facilidade, inspira as pessoas e gosta de trabalhar em grupo. Pode crescer organizando melhor o tempo e os detalhes das tarefas.",
+        "sugestoes": ["Oratória", "Comunicação eficaz", "Imagem pessoal e networking"] },
+      "S": { "nome": "Estável",
+        "descricao": "Você é paciente, confiável e valoriza um bom ambiente. As pessoas contam com você. Pode crescer se arriscando um pouco mais em situações novas.",
+        "sugestoes": ["Inteligência emocional", "Técnicas de RH", "Saúde emocional"] },
+      "C": { "nome": "Analista",
+        "descricao": "Você é cuidadoso(a), gosta de entender o porquê das coisas e preza pela qualidade. Pode crescer sendo mais flexível quando não há tempo para todos os detalhes.",
+        "sugestoes": ["Educação financeira", "Tecnologia", "Inteligência artificial"] }
+    }
+  },
+  {
+    "id": "RIASEC",
+    "titulo": "Teste Vocacional",
+    "subtitulo": "Teste RIASEC",
+    "duracaoMinutos": 15,
+    "instrucao": "Diga o quanto você gosta de cada atividade. Pense no que você faria com prazer, não no que é mais fácil.",
+    "perguntas": [
+      { "texto": "Montar, consertar ou mexer em equipamentos e máquinas",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "R", "pontos": 3 }, { "texto": "Gosto", "dimensao": "R", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "R", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "R", "pontos": 0 } ] },
+      { "texto": "Fazer atividades ao ar livre ou trabalhos práticos com as mãos",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "R", "pontos": 3 }, { "texto": "Gosto", "dimensao": "R", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "R", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "R", "pontos": 0 } ] },
+      { "texto": "Resolver problemas de matemática ou de lógica",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "I", "pontos": 3 }, { "texto": "Gosto", "dimensao": "I", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "I", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "I", "pontos": 0 } ] },
+      { "texto": "Pesquisar como as coisas funcionam (ciência, tecnologia, corpo humano)",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "I", "pontos": 3 }, { "texto": "Gosto", "dimensao": "I", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "I", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "I", "pontos": 0 } ] },
+      { "texto": "Desenhar, escrever, criar vídeos ou músicas",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "A", "pontos": 3 }, { "texto": "Gosto", "dimensao": "A", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "A", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "A", "pontos": 0 } ] },
+      { "texto": "Pensar em ideias diferentes e criativas para um projeto",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "A", "pontos": 3 }, { "texto": "Gosto", "dimensao": "A", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "A", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "A", "pontos": 0 } ] },
+      { "texto": "Ajudar, ensinar ou cuidar de outras pessoas",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "S", "pontos": 3 }, { "texto": "Gosto", "dimensao": "S", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "S", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "S", "pontos": 0 } ] },
+      { "texto": "Participar de projetos sociais e voluntariado",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "S", "pontos": 3 }, { "texto": "Gosto", "dimensao": "S", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "S", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "S", "pontos": 0 } ] },
+      { "texto": "Liderar um grupo, vender uma ideia ou negociar",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "E", "pontos": 3 }, { "texto": "Gosto", "dimensao": "E", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "E", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "E", "pontos": 0 } ] },
+      { "texto": "Planejar como abrir o próprio negócio",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "E", "pontos": 3 }, { "texto": "Gosto", "dimensao": "E", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "E", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "E", "pontos": 0 } ] },
+      { "texto": "Organizar planilhas, arquivos e documentos",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "C", "pontos": 3 }, { "texto": "Gosto", "dimensao": "C", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "C", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "C", "pontos": 0 } ] },
+      { "texto": "Seguir um passo a passo com regras claras",
+        "alternativas": [
+          { "texto": "Gosto muito", "dimensao": "C", "pontos": 3 }, { "texto": "Gosto", "dimensao": "C", "pontos": 2 },
+          { "texto": "Mais ou menos", "dimensao": "C", "pontos": 1 }, { "texto": "Não gosto", "dimensao": "C", "pontos": 0 } ] }
+    ],
+    "perfis": {
+      "R": { "nome": "Realista",
+        "descricao": "Você gosta de atividades práticas e concretas. Áreas que costumam combinar: engenharias, tecnologia aplicada, agronomia, educação física.",
+        "sugestoes": ["Tecnologia", "Inovação e criatividade"] },
+      "I": { "nome": "Investigativo",
+        "descricao": "Você gosta de entender, pesquisar e resolver problemas. Áreas que costumam combinar: ciências, saúde, computação, dados.",
+        "sugestoes": ["Inteligência artificial", "Tecnologia", "Nutrição para performance educacional"] },
+      "A": { "nome": "Artístico",
+        "descricao": "Você gosta de criar e se expressar. Áreas que costumam combinar: design, comunicação, publicidade, arquitetura, artes.",
+        "sugestoes": ["Inovação e criatividade", "Comunicação eficaz"] },
+      "S": { "nome": "Social",
+        "descricao": "Você gosta de ajudar e se relacionar. Áreas que costumam combinar: educação, psicologia, serviço social, saúde, RH.",
+        "sugestoes": ["Inteligência emocional", "Técnicas de RH", "Democracia e consciência social"] },
+      "E": { "nome": "Empreendedor",
+        "descricao": "Você gosta de liderar, convencer e assumir desafios. Áreas que costumam combinar: administração, direito, marketing, relações internacionais.",
+        "sugestoes": ["Empreendedorismo", "Liderança", "Simulação da ONU"] },
+      "C": { "nome": "Convencional",
+        "descricao": "Você gosta de organização e de regras claras. Áreas que costumam combinar: contabilidade, finanças, logística, administração.",
+        "sugestoes": ["Educação financeira", "Carreira 2.0"] }
+    }
+  }
+]
