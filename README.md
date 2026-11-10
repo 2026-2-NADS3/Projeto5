@@ -47,6 +47,7 @@ Raiz
 │   └── Entrega 2
 ├── executáveis
 │   └── android.apk
+│   └── Web 
 ├── imagens
 ├── src
 │   ├── Backend
@@ -64,7 +65,7 @@ Raiz
 
 ---
 
-## 🛠 Instalação
+## Instalação
 
 <b>Android:</b>
 
@@ -89,7 +90,7 @@ Encontre o index.html na pasta executáveis e execute-o como uma página WEB (at
 
 ---
 
-## 💻 Executando o Projeto no Android Studio
+# Executando o Projeto no Android Studio
 
 1. Clone este repositório:
 
